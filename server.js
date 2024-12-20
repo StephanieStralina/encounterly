@@ -56,7 +56,7 @@ app.get('/', (req, res) => {
 // defined in the router module
 app.use('/auth', require('./controllers/auth'));
 
-app.use('/builder', require('./controllers/builder'));
+app.use('/builder', require('./controllers/unicorns'));
 
 // Any requests that get this far must have a signed in 
 // user thanks to ensureSignedIn middleware

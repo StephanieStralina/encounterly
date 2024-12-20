@@ -14,8 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  align-items: center;
 }
+
+.wrapper h1 {
+  align-self: center;
+}
+
 
 nav,
 footer {
@@ -95,9 +99,27 @@ button:hover {
 #monsters {
   background-color: aliceblue;
   width: 70%;
+  display: flex;
+  justify-content: center;
 }
 
 #encounter {
   background-color: blanchedalmond;
   width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  #monsters {
+    background-color: purple;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #encounter {
+    background-color: green;
+    display: none;
+  }
 }
