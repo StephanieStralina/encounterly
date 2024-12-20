@@ -31,5 +31,10 @@ router.post('/', async (req, res) => {
     }
 });
 
+//GET /players/:playerId (show functionality)
+router.get('/:playerId', async (req, res) => {
+    const player = req.user.players.id(req.params.playerId);
+    res.render('players/show.ejs', {player});
+})
 
 module.exports = router;
