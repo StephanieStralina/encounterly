@@ -7,9 +7,15 @@ const playerSchema = new Schema({
     type: String,
     required: true,
   },
+  charImg: {
+    type: String,
+  },
   charClass: {
     type: String,
+    enum: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 
+    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'],
     required: true,
+    default: 'Barbarian',
   },
   charLevel: {
     type: Number,

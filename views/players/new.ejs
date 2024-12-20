@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encounterly - Your Players</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <!-- Home Page's Content -->
+    <%- include('../partials/header.ejs') %>
+        <div class="wrapper">
+            <h1>Add a Player Charater</h1>
+            <form action="/players" method="POST">
+                <label for="character-name">Character Name:</label>
+                <input type="text" name="charName" id="charName" required/>
+
+                <label for="character-image">Character Image:</label>
+                <input type="url" name="charImg" id="charImg"/>
+              
+                <label for="character-class">Character Class:</label>
+                <select type="class" name="charClass" id="charClass">
+                    <% characterClasses.forEach(classOption => { %>
+                        <option value="<%= classOption %>"><%= classOption %></option>
+                    <% }) %>
+                </select>
+              
+                <label for="character-level">Character Level:</label>
+                <input type="number" name="charLevel" id="charLevel" required/>
+
+                <label for="character-hp">Character HP:</label>
+                <input type="number" name="hp" id="charLevel" required/>
+
+                <label for="character-ac">Character AC:</label>
+                <input type="number" name="ac" id="ac" required/>
+
+                <label for="character-party">Party Name:</label>
+                <input type="string" name="partyName" id="partyName" autocomplete="on"/>
+        
+                <button type="submit">Add Application</button>
+              </form>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encounterly - A D&D Encounter Builder</title>
+    <title>Encounterly - Your Players</title>
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
@@ -12,15 +12,18 @@
     <!-- Home Page's Content -->
     <%- include('../partials/header.ejs') %>
         <div class="wrapper">
-            <h1>Builder page</h1>
-            <div class="builder-wrapper">
-                <div id="monsters">
-                    List of monsters
-                </div>
-                <div id="encounter">
-                    Encounter Builder
-                </div>
-            </div>
+            <a href="/players/new">Add a New Player</a>
+            <% if (players.length) { %>
+                <ul>
+                <% players.forEach(player => { %>
+                    <li>
+                        <%= players.charName %>
+                    </li>
+                <% }) %>
+                </ul>
+            <% } else { %>
+                <p>You don't have any players yet!</p>
+            <% } %>
         </div>
         <%- include('../partials/footer.ejs') %>
 

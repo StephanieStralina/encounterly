@@ -56,14 +56,13 @@ app.get('/', (req, res) => {
 // defined in the router module
 app.use('/auth', require('./controllers/auth'));
 
-app.use('/builder', require('./controllers/unicorns'));
-
 // Any requests that get this far must have a signed in 
 // user thanks to ensureSignedIn middleware
 app.use(require('./middleware/ensure-signed-in'));
 // Any controller/routes mounted below here will have
 // ALL routes protected by the ensureSignedIn middleware
-
+app.use('/encounter', require('./controllers/encounter'));
+app.use('/players', require('./controllers/player'));
 
 
 
