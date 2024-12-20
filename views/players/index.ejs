@@ -17,7 +17,9 @@
                 <ul>
                 <% players.forEach(player => { %>
                     <li>
-                        <%= players.charName %>
+                        <a href="/players/<%= player._id %>">
+                        <%= player.charName %>
+                        </a>
                     </li>
                 <% }) %>
                 </ul>

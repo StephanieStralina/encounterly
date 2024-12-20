@@ -20,7 +20,16 @@ router.get('/new', (req, res) => {
 });
 
 //POST /player (create functionality)
-
+router.post('/', async (req, res) => {
+    try {
+        req.user.players.push(req.body);
+        await req.user.save();
+        res.redirect('/players');
+    } catch(e) {
+        console.log(e)
+        res.redirect('/players');
+    }
+});
 
 
 module.exports = router;
