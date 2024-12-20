@@ -14,6 +14,12 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin-top: 2vmin;
+}
+
+.center {
+  display: flex;
+  align-items: center;
 }
 
 .wrapper h1 {

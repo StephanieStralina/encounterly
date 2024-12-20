@@ -32,9 +32,42 @@ router.post('/', async (req, res) => {
 });
 
 //GET /players/:playerId (show functionality)
-router.get('/:playerId', async (req, res) => {
+router.get('/:playerId', (req, res) => {
     const player = req.user.players.id(req.params.playerId);
     res.render('players/show.ejs', {player});
 })
+
+//GET /players/:playerId/edit (edit functionality)
+router.get('/:playerId/edit', (req, res) => {
+    try {
+        const player = req.user.players.id(req.params.playerId);
+        const characterClasses = User.schema.path('players.charClass').enumValues;
+        res.render('players/edit.ejs', { player, characterClasses });
+    } catch(e) {
+        console.log(e);
+        res.redirect('/players');
+    }
+});
+
+//PUT /players/:playerId (update functionality)
+router.put('/:playerId', async (req, res) => {
+    try {
+        const player = req.user.players.id(req.params.playerId);
+        player.set(req.body);
+        await req.user.save();
+        res.redirect(`/players/${player._id}`);
+    } catch(e) {
+        console.log(e);
+        res.redirect('/players');
+    }
+});
+
+
+
+
+
+
+
+
 
 module.exports = router;
