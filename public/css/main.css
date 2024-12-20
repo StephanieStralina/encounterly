@@ -5,9 +5,16 @@
 
 body {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
 }
 
 nav,
@@ -72,4 +79,25 @@ form button[type='submit'] {
 button:hover {
   background-color: lightslategray;
   color: white;
+}
+
+.wrapper form {
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.builder-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#monsters {
+  background-color: aliceblue;
+  width: 70%;
+}
+
+#encounter {
+  background-color: blanchedalmond;
+  width: 30%;
 }

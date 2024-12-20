@@ -44,7 +44,11 @@ app.use(require('./middleware/add-user-to-locals-and-req'));
 
 // GET /  (home page functionality)
 app.get('/', (req, res) => {
-  res.render('home.ejs', { title: 'Home Page' });
+  if(req.user) {
+    res.render('builder/index.ejs')
+  } else {
+    res.render('home.ejs');
+  }
 });
 
 // '/auth' is the "starts with" path that the request must match
@@ -52,7 +56,7 @@ app.get('/', (req, res) => {
 // defined in the router module
 app.use('/auth', require('./controllers/auth'));
 
-app.use('/unicorns', require('./controllers/unicorns'));
+app.use('/builder', require('./controllers/builder'));
 
 // Any requests that get this far must have a signed in 
 // user thanks to ensureSignedIn middleware

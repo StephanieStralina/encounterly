@@ -1,3 +1,35 @@
-<%- include('./partials/header.ejs') %>
-<!-- Home Page's Content -->
-<%- include('./partials/footer.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encounterly - A D&D Encounter Builder</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+  <!-- Home Page's Content -->
+  <%- include('./partials/header.ejs') %>
+    <div class="wrapper">
+      <main>
+        <h1>Hey visitor!</h1>
+        <p>Here's some cool info about this app</p>
+        <a href="/auth/sign-up">And here's a link that'll take you to a sign-up page!</a>
+        <p>Hate sign-up pages? That's cool - try the form below!</p>
+        <form action="/auth/sign-up" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" />
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" name="confirmPassword" id="confßirmPassword" />
+          <button type="submit">SIGN UP</button>
+        </form>
+      </main>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>

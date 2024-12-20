@@ -1,11 +1,29 @@
-<%- include('../partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
 
-<form action="/auth/sign-in" method="POST">
-  <label for="username">Username:</label>
-  <input type="text" name="username" id="username" />
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password" />
-  <button type="submit">SIGN IN</button>
-</form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encounterly - Sign in to your account</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
 
-<%- include('../partials/footer.ejs')%>
+<body>
+  <%- include('../partials/header.ejs') %>
+
+    <!-- Sign up page content-->
+    <div class="wrapper">
+      <h1> Sign in to your account</h1>
+      <form action="/auth/sign-in" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" />
+        <button type="submit">SIGN IN</button>
+      </form>
+    </div>
+
+    <%- include('../partials/footer.ejs')%>
+</body>
+
+</html>
