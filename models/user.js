@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// Shortcut variable
 const Schema = mongoose.Schema;
 
 const playerSchema = new Schema({
@@ -12,8 +11,8 @@ const playerSchema = new Schema({
   },
   charClass: {
     type: String,
-    enum: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 
-    'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'],
+    enum: ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk',
+      'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard'],
     required: true,
     default: 'Barbarian',
   },
@@ -48,7 +47,7 @@ const userSchema = new Schema({
     type: [Schema.Types.ObjectId],
     ref: 'Encounter'
   },
-  players: [playerSchema], 
+  players: [playerSchema],
 });
 
 module.exports = mongoose.model("User", userSchema);
