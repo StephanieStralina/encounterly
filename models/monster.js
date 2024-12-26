@@ -46,7 +46,7 @@ const statSchema = new Schema ({
         type: Number,
         required: true,
     },
-}),
+});
 
 
 const monsterSchema = new Schema({
@@ -54,18 +54,25 @@ const monsterSchema = new Schema({
         type: String,
         required: true,
     },
+    image: {
+        type: String
+    },
+    type: {
+        type: String,
+        required: true,
+    },
     xp: {
         type: Number,
         required: true,
-    }
+    },
     cr: {
-        type: Number,
+        type: String,
         required: true,
-    }
+    },
     hp: {
         type: Number,
         required: true,
-    }
+    },
     ac: {
         type: Number,
         required: true,
@@ -74,25 +81,13 @@ const monsterSchema = new Schema({
         type: Number,
         required: true,
     },
-    type: {
-        type: String,
-        required: true,
-    },
-    details: [detailSchema],
-    stats: [statSchema],
+    details: detailSchema,
+    stats: statSchema,
     user: {
-        type: [Schema.Types.ObjectId],
+        type: Schema.Types.ObjectId,
         ref: 'User',
     },
 });
-
-
-
-
-
-
-
-
 
 
 module.exports = mongoose.model("Monster", monsterSchema);

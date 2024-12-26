@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encounterly - Add a Monster</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+    <!-- Home Page's Content -->
+    <%- include('../partials/header.ejs') %>
+        <div class="wrapper">
+            <h1>Add a New Monster</h1>
+            <form action="/monsters" method="POST">
+                <label for="monster-name">Monster Name:</label>
+                <input type="text" name="name" id="monster-name" required/>
+
+                <label for="monster-image">Image:</label>
+                <input type="url" name="image" id="monster-image"/>
+              
+                <label for="monster-type">Type:</label>
+                <input type="text" name="type" id="monster-type" required/>
+              
+                <label for="xp">XP:</label>
+                <input type="number" name="xp" id="xp" required/>
+        
+                <label for="CR">CR:</label>
+                <input type="text" name="cr" id="cr" required/>
+        
+                <label for="hp">HP:</label>
+                <input type="number" name="hp" id="hp" required/>
+        
+                <label for="ac">AC:</label>
+                <input type="number" name="ac" id="ac" required/>
+        
+                <label for="proficiency">Prof:</label>
+                <input type="number" name="prof" id="prof" required/>
+        
+                <!--statSchema-->
+
+                <label for="Strength">Strength:</label>
+                <input type="number" name="stats.str" id="str" required/>
+
+                <label for="Dexterity">Dexterity:</label>
+                <input type="number" name="stats.dex" id="dex" required/>
+
+                <label for="Constitution">Constitution:</label>
+                <input type="number" name="stats.con" id="con" required/>
+
+                <label for="Intelligence">Intelligence:</label>
+                <input type="number" name="stats.int" id="int" required/>
+
+                <label for="Wisdom">Wisdom:</label>
+                <input type="number" name="stats.wis" id="wis" required/>
+
+                <label for="Charisma">Charisma:</label>
+                <input type="number" name="stats.cha" id="cha" required/>
+
+                <label for="Speed">Speed:</label>
+                <input type="number" name="stats.speed" id="speed" required/>
+
+                <!-- detailSchema -->
+
+                <label for="Abilities">Abilities:</label>
+                <input type="text" name="details.abilities" id="abilities" />
+
+                <label for="Senses">Senses:</label>
+                <input type="text" name="details.senses" id="senses" />
+
+                <label for="Languages">Languages:</label>
+                <input type="text" name="details.languages" id="languages" />
+
+                <label for="Description">Description:</label>
+                <input type="text" name="details.description" id="description" />
+
+
+                <button type="submit">Add Monster to List</button>
+              </form>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>
