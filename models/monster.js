@@ -80,6 +80,10 @@ const monsterSchema = new Schema({
     },
     details: [detailSchema],
     stats: [statSchema],
+    user: {
+        type: [Schema.Types.ObjectId],
+        ref: 'User',
+    },
 });
 
 
@@ -91,4 +95,4 @@ const monsterSchema = new Schema({
 
 
 
-module.exports = mongoose.model("Monster", userSchema);
+module.exports = mongoose.model("Monster", monsterSchema);
