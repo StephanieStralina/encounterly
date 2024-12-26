@@ -1,11 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-const detailSchema = new Schema ({
-    abilities: {
+const abilitySchema = new Schema ({
+    name: {
+       type: String, 
+    },
+    desc: {
         type: String,
     },
+});
+
+
+const detailSchema = new Schema ({
+    abilities: [abilitySchema],
     senses: {
         type: String,
     },
@@ -58,6 +65,10 @@ const monsterSchema = new Schema({
         type: String
     },
     type: {
+        type: String,
+        required: true,
+    },
+    size: {
         type: String,
         required: true,
     },
