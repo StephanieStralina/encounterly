@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <!-- Home Page's Content -->
     <%- include('../partials/header.ejs') %>
         <div class="wrapper">
             <h1>Add a New Monster</h1>
@@ -26,6 +25,9 @@
 
                 <label for="monster-size">Size:</label>
                 <input type="text" name="size" id="monster-size" required/>
+              
+                <label for="monster-alignment">Alignment:</label>
+                <input type="text" name="alignment" id="monster-alignment"/>
               
                 <label for="xp">XP:</label>
                 <input type="number" name="xp" id="xp" required/>

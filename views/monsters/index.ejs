@@ -13,6 +13,15 @@
     <%- include('../partials/header.ejs') %>
         <h1>Monsters Page</h1>
         <a href="/monsters/new">Add a Monster</a>
+        <% if (monsters.length) { %>
+            <% monsters.forEach(monster => { %>
+                <a href="/monsters/<%= monster._id %>">
+                <%= monster.name %>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no monsters in this list</p>
+        <% } %>
     <%- include('../partials/footer.ejs') %>
 
 </body>
