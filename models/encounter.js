@@ -12,9 +12,15 @@ const encounterSchema = new Schema({
     },
     enemies: {
         type: [Schema.Types.ObjectId],
-        ref: 'Monster'
+        ref: 'Monster',
     },
     difficulty: {
         type: Number,
-    }
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    },
 });
+
+module.exports = mongoose.model("Encounter", encounterSchema);

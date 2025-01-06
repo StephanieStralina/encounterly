@@ -4,7 +4,6 @@ const Monster = require('../models/monster');
 
 //GET /monsters (index functionality)
 router.get('/', async (req, res) => {
-    console.log(req.user._id);
     const monsters = await Monster.find({ user: req.user._id});
     // const adminMonsters = await Monster.find({ user: new mongoose.Types.ObjectId('677c4e585332fb246e1af713')});  ICEBOX - Add to user creation process?
     // If admin has new monsters, then add? Or only base?
