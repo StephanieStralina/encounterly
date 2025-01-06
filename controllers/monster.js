@@ -18,20 +18,8 @@ router.get('/new', (req, res) => {
 // POST /monsters (create functionality)
 router.post('/', async (req, res) => {
     try {
-        if (req.body.details.abilities.length) {
-            const abilities = req.body.details.abilities;
-            const abArray = [];
-            for (let i = 0; i < req.body.details.abilities.length; i+=2) {
-                abArray.push({
-                   name: abilities[i],
-                   description: abilities[i+1] || '',
-                });
-            }
-            req.body.details.abilities = abArray;
-        }
         const monster = new Monster(req.body);
         await monster.save();
-        console.log(monster);
         res.redirect('/monsters');
     } catch (e) {
         console.log(e);
@@ -60,7 +48,10 @@ router.get('/:monsterId/edit', async (req, res) => {
 //PUT /monsters/:monsterId (update functionality)
 router.put('/:monsterId', async (req, res) => {
     try {
-        
+        console.log(req.body);
+        const monsterId = req.params.monsterId;
+        await Monster.findByIdAndUpdate(monsterId, req.body);
+        res.redirect(`/monsters/${monsterId}`);
     } catch (e) {
         console.log(e);
         res.redirect('/monsters')
@@ -80,3 +71,14 @@ router.delete('/:monsterId', async (req, res) => {
 
 
 module.exports = router;
+
+
+//Dead code
+        // if (req.body.details.abilities.length) {
+        //     const abilities = req.body.details.abilities;
+        //     const abArray = abilities.map(ability => ({
+        //         name: ability.name,
+        //         description: ability.description,
+        //     }));
+        //     req.body.details.abilities = abArray;
+        // }

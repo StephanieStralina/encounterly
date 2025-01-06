@@ -8,6 +8,7 @@ const abilitySchema = new Schema ({
     description: {
         type: String,
     },
+    default: [],
 });
 
 
