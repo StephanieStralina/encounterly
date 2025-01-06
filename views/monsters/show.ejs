@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encounterly - <%= monster.name %></title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/form-handler.js"></script>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <h1><%= monster.name %></h1>
+    <img src="<%= monster.image %>" style="max-width: 400px; max-height: 300px;">
+    <p><%= monster.type %></p>
+    <p><%= monster.size %></p>
+    <p><%= monster.alignment %></p>
+    <p><%= monster.xp %></p>
+    <p><%= monster.cr %></p>
+    <p><%= monster.hp %></p>
+    <p><%= monster.ac %></p>
+    <p><%= monster.prof %></p>
+    <p><%= monster.stats.str %></p>
+    <p><%= monster.stats.dex %></p>
+    <p><%= monster.stats.con %></p>
+    <p><%= monster.stats.int %></p>
+    <p><%= monster.stats.wis %></p>
+    <p><%= monster.stats.cha %></p>
+    <p><%= monster.stats.speed %></p>
+    <p><%= monster.details.skills %></p>
+    <p><%= monster.details.senses %></p>
+    <p><%= monster.details.languages %></p>
+    <p><%= monster.details.description %></p>
+    <h3>Abilities</h3>
+    <% monster.details.abilities.forEach(ability => { %>
+        <h4><%= ability.name %></h4>
+        <p><%= ability.description %></p>
+    <% }) %>
+    <a href="/monsters/<%= monster._id %>/edit">Edit Monster?</a>
+    <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Monster?</button>
+    </form>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

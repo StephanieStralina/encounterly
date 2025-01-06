@@ -66,7 +66,7 @@ router.put('/:playerId', async (req, res) => {
 //DELETE /players/:playerId (delete functionality)
 router.delete('/:playerId', async (req, res) => {
     try {
-        const player = req.user.players.pull(req.params.playerId);
+        req.user.players.pull(req.params.playerId);
         await req.user.save();
         res.redirect('/players');
     } catch(e) {

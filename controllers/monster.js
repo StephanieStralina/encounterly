@@ -9,20 +9,72 @@ router.get('/', async (req, res) => {
     res.render('monsters/index.ejs', { monsters });
 });
 
+
 //GET /monsters/new (new functionality)
 router.get('/new', (req, res) => {
     res.render('monsters/new.ejs');
 });
 
-//POST /monsters (create functionality)
+// POST /monsters (create functionality)
 router.post('/', async (req, res) => {
     try {
-        req.body.user = req.user._id;
-        await Monster.create(req.body);
-        res.redirect('/monsters', { Monster });
+        if (req.body.details.abilities.length) {
+            const abilities = req.body.details.abilities;
+            const abArray = [];
+            for (let i = 0; i < req.body.details.abilities.length; i+=2) {
+                abArray.push({
+                   name: abilities[i],
+                   description: abilities[i+1] || '',
+                });
+            }
+            req.body.details.abilities = abArray;
+        }
+        const monster = new Monster(req.body);
+        await monster.save();
+        console.log(monster);
+        res.redirect('/monsters');
     } catch (e) {
         console.log(e);
         res.redirect('/monsters'); //TODO add error page
+    }
+});
+
+
+//GET /monsters/:monsterId (show functionality)
+router.get('/:monsterId', async (req, res) => {
+    const monster = await Monster.findById(req.params.monsterId);
+    res.render('monsters/show.ejs', { monster });
+});
+
+//GET /monsters/:monsterId/edit (edit functionality)
+router.get('/:monsterId/edit', async (req, res) => {
+    try {
+        const monster = await Monster.findById(req.params.monsterId);
+        res.render(`monsters/edit.ejs`, { monster })
+    } catch (e) {
+        console.log(e);
+        res.redirect('/monsters') //TODO add error page
+    }
+});
+
+//PUT /monsters/:monsterId (update functionality)
+router.put('/:monsterId', async (req, res) => {
+    try {
+        
+    } catch (e) {
+        console.log(e);
+        res.redirect('/monsters')
+    }
+});
+
+//DELETE /monsters/:monsterId (delete functionality)
+router.delete('/:monsterId', async (req, res) => {
+    try {
+        await Monster.findByIdAndDelete(req.params.monsterId);
+        res.redirect('/monsters');
+    } catch(e){
+        console.log(e);
+        res.redirect('/monsters');
     }
 });
 

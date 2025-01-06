@@ -5,7 +5,7 @@ const abilitySchema = new Schema ({
     name: {
        type: String, 
     },
-    desc: {
+    description: {
         type: String,
     },
 });
@@ -13,6 +13,9 @@ const abilitySchema = new Schema ({
 
 const detailSchema = new Schema ({
     abilities: [abilitySchema],
+    skills: {
+        type: String,
+    },
     senses: {
         type: String,
     },
@@ -71,6 +74,9 @@ const monsterSchema = new Schema({
     size: {
         type: String,
         required: true,
+    },
+    alignment: {
+        type: String,
     },
     xp: {
         type: Number,

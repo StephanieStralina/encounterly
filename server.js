@@ -27,7 +27,9 @@ app.use(morgan('dev'));
 // Static middleware for returning static assets to the browser
 app.use(express.static('public'));
 // Middleware to parse URL-encoded data from forms
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
+//Json middleware TRIAL AS WELL AS EXTENDED TRUE TRIAL ^ TODO
+app.use(express.json());
 // Middleware for using HTTP verbs such as PUT or DELETE
 app.use(methodOverride("_method"));
 // Session middleware

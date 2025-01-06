@@ -10,7 +10,7 @@ function addAbility() {
 
     const nameInput = document.createElement('input'); 
     nameInput.setAttribute('type', 'text'); 
-    nameInput.setAttribute('name', `details.abilities[${index}].name`); 
+    nameInput.setAttribute('name', `details[abilities][${index}].name`); 
     nameInput.setAttribute('id', `abilities-name-${index}`); 
     
     const descriptionLabel = document.createElement('label'); 
@@ -19,7 +19,7 @@ function addAbility() {
     
     const descriptionInput = document.createElement('input'); 
     descriptionInput.setAttribute('type', 'text'); 
-    descriptionInput.setAttribute('name', `details.abilities[${index}].description`); 
+    descriptionInput.setAttribute('name', `details[abilities][${index}].description`); 
     descriptionInput.setAttribute('id', `abilities-description-${index}`); 
     
     container.appendChild(nameLabel); 
