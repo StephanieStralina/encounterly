@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encounterly - D&D Encounters</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+<%- include('../partials/header.ejs') %>
+    <!-- Page's Content -->
+    <h1>Encounters</h1>
+    <a href="/encounters/new">Add an Encounter</a>
+    <% if (encounters.length) { %>
+        <% encounters.forEach(encounter => { %>
+            <a href="/encounters/<%= encounter._id %>">
+                <%= encounter.name %>
+            </a>
+        <% }) %>
+    <% } else { %>
+        <p>You don't have any encounters yet!</p>
+    <% } %>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

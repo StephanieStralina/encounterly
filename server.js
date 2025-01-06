@@ -63,7 +63,7 @@ app.use('/auth', require('./controllers/auth'));
 app.use(require('./middleware/ensure-signed-in'));
 // Any controller/routes mounted below here will have
 // ALL routes protected by the ensureSignedIn middleware
-app.use('/encounter', require('./controllers/encounter'));
+app.use('/encounters', require('./controllers/encounter'));
 app.use('/players', require('./controllers/player'));
 app.use('/monsters', require('./controllers/monster'));
 

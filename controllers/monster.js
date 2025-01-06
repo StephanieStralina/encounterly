@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Monster = require('../models/monster');
-const User = require('../models/user');
 
 //GET /monsters (index functionality)
 router.get('/', async (req, res) => {
-    const monsters = await Monster.find({});
+    console.log(req.user._id);
+    const monsters = await Monster.find({ user: req.user._id});
+    // const adminMonsters = await Monster.find({ user: new mongoose.Types.ObjectId('677c4e585332fb246e1af713')});  ICEBOX - Add to user creation process?
+    // If admin has new monsters, then add? Or only base?
     res.render('monsters/index.ejs', { monsters });
 });
 
@@ -19,6 +21,7 @@ router.get('/new', (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const monster = new Monster(req.body);
+        monster.user = req.user._id;
         await monster.save();
         res.redirect('/monsters');
     } catch (e) {
