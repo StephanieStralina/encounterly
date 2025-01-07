@@ -9,6 +9,7 @@
 </head>
 <body>
 <%- include('../partials/header.ejs') %>
+<div class="wrapper">
     <!-- Page's Content -->
     <h1>Encounters</h1>
     <a href="/encounters/new">Add an Encounter</a>
@@ -21,6 +22,7 @@
     <% } else { %>
         <p>You don't have any encounters yet!</p>
     <% } %>
+</div>
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>

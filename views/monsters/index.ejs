@@ -11,7 +11,8 @@
 <body>
     <!-- Home Page's Content -->
     <%- include('../partials/header.ejs') %>
-        <h1>Monsters Page</h1>
+    <div class="wrapper">
+        <h1>Monsters</h1>
         <a href="/monsters/new">Add a Monster</a>
         <% if (monsters.length) { %>
             <% monsters.forEach(monster => { %>
@@ -22,6 +23,7 @@
         <% } else { %>
             <p>There are no monsters in this list</p>
         <% } %>
+    </div>
     <%- include('../partials/footer.ejs') %>
 
 </body>
