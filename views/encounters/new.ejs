@@ -23,9 +23,9 @@
                     <div class="wrapper center">
                     <label for="players">Players:</label>
                     <!--Iterate through player options, when click, select them-->
-                    <select name="players" id="players" multiple>
+                    <select name="players[]" id="players" multiple>
                         <% players.forEach(player=> { %>
-                            <option value="player.charName">
+                            <option value="<%- player._id %>">
                                 <%= player.charName %>
                             </option>
                             <% }) %>
@@ -35,9 +35,9 @@
             <div class="wrapper center">
                 <label for="Enemies">Monsters:</label>
                 <!--Iterate through player options, when click, select them-->
-                <select name="enemies" id="enemies" multiple>
+                <select name="enemies[]" id="enemies" multiple>
                     <% monsters.forEach(monster=> { %>
-                        <option value="monster">
+                        <option value="<%= monster._id %>">
                             <%= monster.name %>
                         </option>
                         <% }) %>
