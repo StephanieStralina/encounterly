@@ -50,7 +50,6 @@ router.get('/:monsterId/edit', async (req, res) => {
 //PUT /monsters/:monsterId (update functionality)
 router.put('/:monsterId', async (req, res) => {
     try {
-        console.log(req.body);
         const monsterId = req.params.monsterId;
         await Monster.findByIdAndUpdate(monsterId, req.body);
         res.redirect(`/monsters/${monsterId}`);

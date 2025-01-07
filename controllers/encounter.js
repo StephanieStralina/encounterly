@@ -72,7 +72,19 @@ router.get('/:encounterId/edit', async (req, res) => {
 });
 
 //PUT /encounters/:encounterID/ (update functionality)
-
+router.put('/:encounterId', async (req, res) => {
+    try {
+        const encounterId = req.params.encounterId;
+        const {players, enemies} = req.body;
+        req.body.players = Array.isArray(players) ? players : [];
+        req.body.enemies = Array.isArray(enemies) ? enemies : [];
+        await Encounter.findByIdAndUpdate(encounterId, req.body);
+        res.redirect(`/encounters/${encounterId}`);
+    } catch(e) {
+        console.log(e);
+        res.redirect('/encounters')
+    }
+});
 
 
 
