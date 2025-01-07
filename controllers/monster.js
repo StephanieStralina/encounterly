@@ -74,13 +74,3 @@ router.delete('/:monsterId', async (req, res) => {
 
 module.exports = router;
 
-
-//Dead code
-        // if (req.body.details.abilities.length) {
-        //     const abilities = req.body.details.abilities;
-        //     const abArray = abilities.map(ability => ({
-        //         name: ability.name,
-        //         description: ability.description,
-        //     }));
-        //     req.body.details.abilities = abArray;
-        // }

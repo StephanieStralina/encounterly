@@ -38,7 +38,27 @@ router.post('/', async (req, res) => {
     }
 });
 
+//GET /encounters/:encounterID (show functionality)
+router.get('/:encounterId', async (req, res) => {
+    try {
+    const encounter = await Encounter.findById(req.params.encounterId).populate('enemies');
+    const user = await User.findById(encounter.user);
+    const players = user.players.filter(player =>
+            encounter.players.includes(player._id.toString())
+        );
+    console.log(players);
+    res.render('encounters/show.ejs', { encounter, players });
+    } catch(e) {
+        console.log(e);
+        res.redirect('/encounters');
+    }
+});
 
+
+//GET /encounters/:encounterID/edit (edit functionality)
+
+
+//PUT /encounters/:encounterID/ (update functionality)
 
 
 
