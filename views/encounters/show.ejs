@@ -34,6 +34,9 @@
                     <% }) %>
             </ul>
             <a href="/encounters/<%= encounter._id %>/edit">Edit Encounter?</a>
+            <form action="/encounters/<%= encounter._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete Encounter?</button>
+            </form>
         </div>
         <%- include('../partials/footer.ejs') %>
 </body>

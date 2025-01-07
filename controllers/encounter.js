@@ -46,7 +46,6 @@ router.get('/:encounterId', async (req, res) => {
     const players = user.players.filter(player =>
             encounter.players.includes(player._id.toString())
         );
-    console.log('Encounter:', encounter);
     res.render('encounters/show.ejs', { encounter, players });
     } catch(e) {
         console.log(e);
@@ -63,7 +62,6 @@ router.get('/:encounterId/edit', async (req, res) => {
         const selectedPlayers = encounter.players.map(playerId => playerId.toString());
         const monsters = await Monster.find({ user: req.user._id});
         const selectedEnemies = encounter.enemies.map(enemy => enemy._id.toString());
-        console.log(encounter);
         res.render('encounters/edit.ejs', { encounter, players, selectedPlayers, monsters, selectedEnemies});
     } catch(e) {
         console.log(e);
@@ -83,6 +81,17 @@ router.put('/:encounterId', async (req, res) => {
     } catch(e) {
         console.log(e);
         res.redirect('/encounters')
+    }
+});
+
+//DELETE /encounters/:encounterID/ (delete functionality)
+router.delete('/:encounterId', async (req, res) => {
+    try {
+        await Encounter.findByIdAndDelete(req.params.encounterId);
+        res.redirect('/encounters');
+    } catch(e) {
+        console.log(e);
+        res.redirect('/encounters');
     }
 });
 
