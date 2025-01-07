@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encounterly - <%= encounter.name %></title>
+    <title>Encounterly - <%= encounter.name %>
+    </title>
     <link rel="stylesheet" href="/css/main.css" />
 </head>
+
 <body>
-<%- include('../partials/header.ejs') %>
-<div class="wrapper">
-    <!-- Page's Content -->
-    <h1>Encounter - <%= encounter.name %></h1>
-    <ul>
-        <% players.forEach(player => { %>
-            <li>
-                <%= player.charName %>
-            </li>
-        <% }) %>
-    </ul>
-    <ul>
-        <% encounter.enemies.forEach(enemy => { %>
-            <li>
-                <%= enemy.name %>
-            </li>
-        <% }) %>
-    </ul>
-</div>
-    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/header.ejs') %>
+        <div class="wrapper">
+            <!-- Page's Content -->
+            <h1>Encounters</h1>
+            <h2>
+                <%= encounter.name %>
+            </h2>
+            <ul>
+                <h3>Players</h3>
+                <% players.forEach(player=> { %>
+                    <li>
+                        <%= player.charName %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <ul>
+                <h3>Enemies</h3>
+                <% encounter.enemies.forEach(enemy=> { %>
+                    <li>
+                        <%= enemy.name %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <a href="/encounters/<%= encounter._id %>/edit">Edit Encounter?</a>
+        </div>
+        <%- include('../partials/footer.ejs') %>
 </body>
+
 </html>
