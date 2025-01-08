@@ -36,7 +36,7 @@ body {
 
 .center {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 nav,
@@ -233,10 +233,10 @@ button:hover {
   align-content: center;
   justify-content: center;
   padding: 3em;
-  background-color: #9bc4d4be;
+  background-color: #48788bb9;
   color: #043142;
   border-radius: 4vmin;
-  padding: 2vmin 3vmin;
+  padding: 2vmin 2vmin;
   margin-top: 2vmin;
   width: 95%;
   height: 95%;
@@ -255,7 +255,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 2vmin;
+  border-radius: 2.5vmin;
 }
 
 #encounter {
@@ -265,11 +265,104 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border-radius: 2vmin;
+  border-radius: 2.5vmin;
   gap: 12vmin;
   padding-top: 2vmin;
 }
 
+.player {
+  width: 95%;
+  margin: 4vmin 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-color: #48788bb9;
+  border-radius: 6vmin;
+}
+
+.player-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9bc4d4;
+  border-radius: 4vmin;
+  padding: 2vmin 10vmin 8vmin;
+  margin-top: 3vmin;
+  margin-bottom: 3vmin;
+  width: 95%;
+  min-height: 90%;
+  gap: 2vmin;
+}
+
+.player-characters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2vmin;
+  gap:1vmin;
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: .5vmin solid #043142;
+  border-radius: 1vmin;
+  height: 40vmin;
+  width: 40vmin;
+  overflow: hidden;
+}
+
+.character-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1vmin; 
+  width: 30vmin; 
+  height: 30vmin;
+  margin-top: 1vmin;
+}
+
+.character-img img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+}
+
+.characters a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #043142;
+}
+
+.characters p {
+  font-style: italic;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vmin;
+  padding: .5vmin .5vmin;
+  border: .3vmin solid #043142;
+  border-radius: 1vmin;
+  width: 28vmin;
+  background-color: #eff5f7;
+}
+
+.button-wrapper a {
+  text-decoration: none; 
+  color: #043142;
+}
 
 @media only screen and (max-width: 1024px) {
   #monsters {
@@ -286,9 +379,7 @@ button:hover {
     height: 90%;
   }
 
-
-
-  .lightbox {
+  .nested-container {
   padding: 8vmin 18vmin;
   }
 

@@ -8,25 +8,43 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <!-- Home Page's Content -->
     <%- include('../partials/header.ejs') %>
-        <div class="wrapper center">
-            <h1>Players</h1>
-            <a href="/players/new">Add a New Player</a>
-            <% if (players.length) { %>
-                <ul>
-                <% players.forEach(player => { %>
-                    <li>
-                        <a href="/players/<%= player._id %>">
-                        <%= player.charName %>
-                        </a>
-                    </li>
-                <% }) %>
-                </ul>
-            <% } else { %>
-                <p>You don't have any players yet!</p>
-            <% } %>
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>Players</h1>
+                    <div class="button-wrapper">
+                        <a href="/players/new"><img src="https://i.imgur.com/7RoB4Dn.png" width="20" height="20"></a>
+                        <a href="/players/new">Add a New Player</a>
+                    </div>
+                    <p>Click on each Player to learn more about their character!</p>
+                    <div class="player-characters">
+                        <% if (players.length) { %>
+                            <% players.forEach(player=> { %>
+                                <div class="characters">
+                                    <div class="character-img">
+                                        <a href="/players/<%= player._id %>">
+                                            <img src="<%= player.charImg %>">
+                                        </a>
+                                    </div>
+                                    <a href="/players/<%= player._id %>">
+                                        <%= player.charName %>
+                                    </a>
+                                    <% if (player.partyName.length) { %>
+                                        <p>
+                                            Member of the <%= player.partyName %> party
+                                        </p>
+                                    <% } %>
+                                </div>
+                                <% }) %>
+                                    <% } else { %>
+                                        <p>You don't have any players yet!</p>
+                                        <% } %>
+                    </div>
+                </div>
+            </div>
         </div>
         <%- include('../partials/footer.ejs') %>
 
