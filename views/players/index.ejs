@@ -9,7 +9,6 @@
 </head>
 
 <body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
-    <!-- Home Page's Content -->
     <%- include('../partials/header.ejs') %>
         <div class="center">
             <div class="player">
@@ -29,14 +28,16 @@
                                             <img src="<%= player.charImg %>">
                                         </a>
                                     </div>
-                                    <a href="/players/<%= player._id %>">
-                                        <%= player.charName %>
-                                    </a>
-                                    <% if (player.partyName.length) { %>
-                                        <p>
-                                            Member of the <%= player.partyName %> party
-                                        </p>
-                                    <% } %>
+                                    <div class="character-txt">
+                                        <a href="/players/<%= player._id %>">
+                                            <%= player.charName %>
+                                        </a>
+                                        <% if (player.partyName.length) { %>
+                                            <p>
+                                                Member of the <%= player.partyName %> party
+                                            </p>
+                                            <% } %>
+                                    </div>
                                 </div>
                                 <% }) %>
                                     <% } else { %>

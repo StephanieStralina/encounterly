@@ -4,27 +4,42 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Encounterly - <%= player.charName %></title>
+    <title>Encounterly - <%= player.charName %>
+    </title>
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
-    <!-- Home Page's Content -->
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
-        <div class="wrapper center">
-            <h1><%= player.charName %></h1>
-            <img src="<%= player.charImg %>" style="max-width: 400px; max-height: 300px;">
-            <ul>
-                <li>Party Member of: <%= player.partyName %></li>
-                <li>Class: <%= player.charClass %></li>
-                <li>Level: <%= player.charLevel %></li>
-                <li>Hit Points: <%= player.hp %></li>
-                <li>Armor Class: <%= player.ac %></li>
-            </ul>
-                <a href="/players/<%= player._id %>/edit">Edit Player</a>
-                <form action="/players/<%= player._id %>?_method=DELETE" method="POST">
-                    <button type="submit">Delete Player?</button>
-                </form>
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>
+                        <%= player.charName %>
+                    </h1>
+                    <div class="show-character">
+                        <img src="<%= player.charImg %>" style="max-width: 400px; max-height: 300px;">
+                    </div>
+                    <% if (player.partyName.length) { %>
+                        <p>Party Member of: <%= player.partyName %>
+                        </p>
+                        <% } %>
+                            <ul>
+                                <li>Class: <%= player.charClass %>
+                                </li>
+                                <li>Level: <%= player.charLevel %>
+                                </li>
+                                <li>Hit Points: <%= player.hp %>
+                                </li>
+                                <li>Armor Class: <%= player.ac %>
+                                </li>
+                            </ul>
+                            <a href="/players/<%= player._id %>/edit" class="button-wrapper">Edit Player?</a>
+                            <form action="/players/<%= player._id %>?_method=DELETE" method="POST">
+                                <button class="button-wrapper delete" type="submit">Delete Player?</button>
+                            </form>
+                </div>
+            </div>
         </div>
         <%- include('../partials/footer.ejs') %>
 
