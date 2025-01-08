@@ -9,7 +9,7 @@ const ensureSignedIn = require('../middleware/ensure-signed-in');
 
 //GET /players (index functionality)
 router.get('/', (req, res) => {
-    const players = req.user.players
+    const players = req.user.players.sort();
     res.render('players/index.ejs', { players });
 });
 
