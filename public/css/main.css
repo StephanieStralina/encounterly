@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  font-size: 1.95vmin;
+  font-size: 2vmin;
   overflow-x: hidden;
 }
 
@@ -94,11 +94,12 @@ form * {
 input,
 textarea,
 select {
-  border: 0.3vmin solid black;
+  border: 0.2vmin solid black;
 }
 
 form button[type='submit'] {
   grid-column: span 2;
+  border: .2vmin solid black;
 }
 
 button:hover {
@@ -109,26 +110,6 @@ button:hover {
 .wrapper form {
   justify-content: center;
   margin-top: 2vh;
-}
-
-.builder-wrapper {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-
-#monsters {
-  background-color: aliceblue;
-  width: 70%;
-  display: flex;
-  justify-content: center;
-}
-
-#encounter {
-  background-color: blanchedalmond;
-  width: 30%;
-  display: flex;
-  justify-content: center;
 }
 
 .overlay-div {
@@ -143,7 +124,7 @@ button:hover {
   margin-bottom: 10vmin;
  }
 
-.lightbox {
+.nested-container {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -201,25 +182,14 @@ button:hover {
   font-size: 1.25em;
 }
 
-.testimonial-container {
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  padding: 3em;
-  background-color: #9bc4d4;
-  border-radius: 7vmin;
-  margin: 0 4vmin;
-  font-size: 1em;
-}
-
-.testimonials {
+.inner-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 4vmin;
 }
 
-.testimonial {
+.row-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,10 +201,81 @@ button:hover {
   border-radius: 4vmin;
 }
 
+.row-item-nobg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60vmin;
+  height: 60vmin;
+  color: #043142;
+  border: .5vmin solid #043142;
+  border-radius: 4vmin;
+}
+
+.sign-in-up {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 3em;
+  background-color: #9bc4d4;
+  color: #043142;
+  border-radius: 7vmin;
+  padding: 8vmin 10vmin;
+  margin-top: 4vmin;
+  width: 95%;
+}
+
+.builder-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 3em;
+  background-color: #9bc4d4be;
+  color: #043142;
+  border-radius: 4vmin;
+  padding: 2vmin 3vmin;
+  margin-top: 2vmin;
+  width: 95%;
+  height: 95%;
+}
+
+.builder-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: 2vmin;
+}
+
+#monsters {
+  background-color: aliceblue;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 2vmin;
+}
+
+#encounter {
+  background-color: blanchedalmond;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 2vmin;
+  gap: 12vmin;
+  padding-top: 2vmin;
+}
+
+
 @media only screen and (max-width: 1024px) {
   #monsters {
     background-color: purple;
     width: 100%;
+    height: 90%;
     display: flex;
     justify-content: center;
   }
@@ -242,7 +283,10 @@ button:hover {
   #encounter {
     background-color: green;
     display: none;
+    height: 90%;
   }
+
+
 
   .lightbox {
   padding: 8vmin 18vmin;
@@ -254,7 +298,7 @@ button:hover {
   padding-bottom: 12vmin;
   }
 
-  .testimonials {
+  .inner-container {
     display: flex;
     flex-direction: column;
     align-items: center;

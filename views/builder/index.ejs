@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <!-- Home Page's Content -->
     <%- include('../partials/header.ejs') %>
         <div class="wrapper">
-            <h1>Builder page</h1>
-            <div class="builder-wrapper">
-                <%- include('../partials/monsters.ejs') %>
-                <%- include('../partials/encounter.ejs') %>
+            <div class="builder-container">
+                <div class="builder-wrapper">
+                    <%- include('../partials/monsters.ejs') %>
+                    <%- include('../partials/encounter.ejs') %>
+                </div>
             </div>
         </div>
         <%- include('../partials/footer.ejs') %>
