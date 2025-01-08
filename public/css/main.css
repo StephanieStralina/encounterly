@@ -8,22 +8,36 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-size: 1.95vmin;
+}
+
+.background-img {
+  background: linear-gradient(rgba(0,0,0,0.5), 
+  rgba(0,0,0,0.5)), 
+  var(--image-url) center center;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1;
   margin-top: 2vmin;
+  width: 100%;
+}
+
+.wrapper p,
+.wrapper a {
+  text-align: center;
+}
+
+.wrapper h1 {
+  align-self: center;
 }
 
 .center {
   display: flex;
   align-items: center;
-}
-
-.wrapper h1 {
-  align-self: center;
 }
 
 nav,
@@ -70,7 +84,7 @@ form {
 }
 
 form * {
-  font-size: 2vmin;
+  font-size: 2.5vmin;
   padding: 1vmin;
   border-radius: 1vmin;
 }
@@ -115,6 +129,107 @@ button:hover {
   justify-content: center;
 }
 
+.overlay-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-color: #48788bb9;
+  border-radius: 10vmin;
+  padding-bottom: 5vmin;
+  width: 90%;
+  margin-bottom: 10vmin;
+ }
+
+.lightbox {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 3em;
+  background-color: #9bc4d4;
+  border-radius: 7vmin;
+  padding: 8vmin 10vmin;
+  margin-top: 4vmin;
+  width: 95%;
+}
+
+.side {
+  display: flex;
+  flex-direction: row;
+  padding: 3em;
+  background-color: #9bc4d4;
+  border-radius: 7vmin;
+  margin: 0 4vmin;
+  margin-top: 4vmin;
+  gap: 4vmin;
+  font-size: 1em;
+  width: 95%;
+}
+
+.side p {
+  text-align: left;
+}
+
+.side img {
+  border-radius: 3vmin;
+}
+
+.blank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vmin 15vmin;
+  color: white;
+  gap: 2vmin;
+  width: 95%;
+  text-align: center;
+}
+
+.blank h1 {
+  font-size: 4.5vmin;
+}
+
+.blank a {
+  padding: 3vmin 5vmin;
+  background-color: white;
+  border-radius: 1vmin;
+  text-decoration: none;
+  color: #0c5876;
+  font-size: 1.25em;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  padding: 3em;
+  background-color: #9bc4d4;
+  border-radius: 7vmin;
+  margin: 0 4vmin;
+  font-size: 1em;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4vmin;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60vmin;
+  height: 60vmin;
+  background-color: #043142;
+  color: white;
+  border-radius: 4vmin;
+}
+
+
 @media only screen and (max-width: 1024px) {
   #monsters {
     background-color: purple;
@@ -127,4 +242,25 @@ button:hover {
     background-color: green;
     display: none;
   }
+
+  .lightbox {
+  padding: 8vmin 18vmin;
+  }
+
+.side {
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 12vmin;
+  }
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 12vmin;
+    gap: 8vmin;
+  }
+
 }
+
+

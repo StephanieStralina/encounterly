@@ -12,97 +12,100 @@
 <body>
     <%- include('../partials/header.ejs') %>
         <div class="wrapper">
-            <h1>Edit <%= monster.name %></h1>
+            <h1>Edit <%= monster.name %>
+            </h1>
             <form action="/monsters/<%= monster._id %>?_method=PUT" method="POST">
                 <label for="monster-name">Monster Name:</label>
-                <input type="text" name="name" id="monster-name" value="<%= monster.name %>" required/>
+                <input type="text" name="name" id="monster-name" value="<%= monster.name %>" required />
 
                 <label for="monster-image">Image:</label>
-                <input type="url" name="image" id="monster-image"value="<%= monster.image %>"/>
-              
+                <input type="url" name="image" id="monster-image" value="<%= monster.image %>" />
+
                 <label for="monster-type">Type:</label>
-                <input type="text" name="type" id="monster-type" value="<%= monster.type %>" required/>
+                <input type="text" name="type" id="monster-type" value="<%= monster.type %>" required />
 
                 <label for="monster-size">Size:</label>
-                <input type="text" name="size" id="monster-size" value="<%= monster.size %>" required/>
-              
+                <input type="text" name="size" id="monster-size" value="<%= monster.size %>" required />
+
                 <label for="monster-alignment">Alignment:</label>
                 <input type="text" name="alignment" id="monster-alignment" value="<%= monster.alignment %>" />
-              
+
                 <label for="xp">XP:</label>
-                <input type="number" name="xp" id="xp" value="<%= monster.xp %>" required/>
-        
+                <input type="number" name="xp" id="xp" value="<%= monster.xp %>" required />
+
                 <label for="CR">CR:</label>
-                <input type="text" name="cr" id="cr" value="<%= monster.cr %>" required/>
-        
+                <input type="text" name="cr" id="cr" value="<%= monster.cr %>" required />
+
                 <label for="hp">HP:</label>
-                <input type="number" name="hp" id="hp" value="<%= monster.hp %>" required/>
-        
+                <input type="number" name="hp" id="hp" value="<%= monster.hp %>" required />
+
                 <label for="ac">AC:</label>
-                <input type="number" name="ac" id="ac" value="<%= monster.ac %>" required/>
-        
+                <input type="number" name="ac" id="ac" value="<%= monster.ac %>" required />
+
                 <label for="proficiency">Prof:</label>
-                <input type="number" name="prof" id="prof" value="<%= monster.prof %>" required/>
-        
+                <input type="number" name="prof" id="prof" value="<%= monster.prof %>" required />
+
                 <!--statSchema-->
 
                 <label for="Strength">Strength:</label>
-                <input type="number" name="stats[str]" id="str" value="<%= monster.stats.str %>" required/>
+                <input type="number" name="stats[str]" id="str" value="<%= monster.stats.str %>" required />
 
                 <label for="Dexterity">Dexterity:</label>
-                <input type="number" name="stats[dex]" id="dex" value="<%= monster.stats.dex %>" required/>
+                <input type="number" name="stats[dex]" id="dex" value="<%= monster.stats.dex %>" required />
 
                 <label for="Constitution">Constitution:</label>
-                <input type="number" name="stats[con]" id="con" value="<%= monster.stats.con %>" required/>
+                <input type="number" name="stats[con]" id="con" value="<%= monster.stats.con %>" required />
 
                 <label for="Intelligence">Intelligence:</label>
-                <input type="number" name="stats[int]" id="int" value="<%= monster.stats.int %>" required/>
+                <input type="number" name="stats[int]" id="int" value="<%= monster.stats.int %>" required />
 
                 <label for="Wisdom">Wisdom:</label>
-                <input type="number" name="stats[wis]" id="wis" value="<%= monster.stats.wis %>" required/>
+                <input type="number" name="stats[wis]" id="wis" value="<%= monster.stats.wis %>" required />
 
                 <label for="Charisma">Charisma:</label>
-                <input type="number" name="stats[cha]" id="cha" value="<%= monster.stats.cha %>" required/>
+                <input type="number" name="stats[cha]" id="cha" value="<%= monster.stats.cha %>" required />
 
                 <label for="Speed">Speed:</label>
-                <input type="number" name="stats[speed]" id="speed" value="<%= monster.stats.speed %>" required/>
-            
+                <input type="number" name="stats[speed]" id="speed" value="<%= monster.stats.speed %>" required />
+
 
                 <!-- detailSchema -->
-                    <label for="Senses">Senses:</label>
-                    <input type="text" name="details[senses]" id="senses" value="<%= monster.details.senses %>" />
-                    
-                    <label for="Skills">Skills:</label>
-                    <input type="text" name="details[skills]" id="skills" value="<%= monster.details.skills %>" />
-    
-                    <label for="Languages">Languages:</label>
-                    <input type="text" name="details[languages]" id="languages" value="<%= monster.details.languages %>" />
-    
-                    <label for="Description">Description:</label>
-                    <input type="text" name="details[description]" id="description" value="<%= monster.details.description %>" />
+                <label for="Senses">Senses:</label>
+                <input type="text" name="details[senses]" id="senses" value="<%= monster.details.senses %>" />
 
-                    <h3>Abilities</h3>
-                    <div id="abilities-container" class="wrapper"> 
-                        <% if (monster.details.abilities.length) { %>
-                            <% monster.details.abilities.forEach((ability, idx) => { %> 
-                                <label for="abilities-name-<%= idx %>">Name:</label> 
-                                <input type="text" name="details[abilities][<%= idx %>][name]" id="abilities-name-<%= idx %>" value="<%= ability.name %>" /> 
-                                <label for="abilities-description-<%= idx %>">Description:</label> 
-                                <input type="text" name="details[abilities][<%= idx %>][description]" id="abilities-description-<%= idx %>" value="<%= ability.description %>"/> 
+                <label for="Skills">Skills:</label>
+                <input type="text" name="details[skills]" id="skills" value="<%= monster.details.skills %>" />
+
+                <label for="Languages">Languages:</label>
+                <input type="text" name="details[languages]" id="languages" value="<%= monster.details.languages %>" />
+
+                <label for="Description">Description:</label>
+                <input type="text" name="details[description]" id="description"
+                    value="<%= monster.details.description %>" />
+
+                <h3>Abilities</h3>
+                <div id="abilities-container" class="wrapper">
+                    <% if (monster.details.abilities.length) { %>
+                        <% monster.details.abilities.forEach((ability, idx)=> { %>
+                            <label for="abilities-name-<%= idx %>">Name:</label>
+                            <input type="text" name="details[abilities][<%= idx %>][name]"
+                                id="abilities-name-<%= idx %>" value="<%= ability.name %>" />
+                            <label for="abilities-description-<%= idx %>">Description:</label>
+                            <input type="text" name="details[abilities][<%= idx %>][description]"
+                                id="abilities-description-<%= idx %>" value="<%= ability.description %>" />
                             <% }) %>
-                        <% } else { %>
-                            <label for="abilities-name-0">Name:</label> 
-                            <input type="text" name="details[abilities][0][name]" id="abilities-name-0" /> 
-                            <label for="abilities-description-0">Description:</label> 
-                            <input type="text" name="details[abilities][0][description]" id="abilities-description-0" />
-                        <% } %>
-                    </div> 
-                    <button type="button" onclick="addAbility()">Add Another Ability</button>
-                    <button type="submit">Update Monster</button>
+                                <% } else { %>
+                                    <label for="abilities-name-0">Name:</label>
+                                    <input type="text" name="details[abilities][0][name]" id="abilities-name-0" />
+                                    <label for="abilities-description-0">Description:</label>
+                                    <input type="text" name="details[abilities][0][description]"
+                                        id="abilities-description-0" />
+                                    <% } %>
                 </div>
-              </form>
-        
+                <button type="button" onclick="addAbility()">Add Another Ability</button>
+                <button type="submit">Update Monster</button>
+            </form>
+        </div>
         <%- include('../partials/footer.ejs') %>
 </body>
-
 </html>

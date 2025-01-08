@@ -8,26 +8,56 @@
   <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
   <!-- Home Page's Content -->
   <%- include('./partials/header.ejs') %>
-    <div class="wrapper">
-      <main>
-        <h1>Hey visitor!</h1>
-        <p>Here's some cool info about this app</p>
-        <a href="/auth/sign-up">And here's a link that'll take you to a sign-up page!</a>
-        <p>Hate sign-up pages? That's cool - try the form below!</p>
-        <form action="/auth/sign-up" method="POST">
-          <label for="username">Username:</label>
-          <input type="text" name="username" id="username" />
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password" />
-          <label for="confirmPassword">Confirm Password:</label>
-          <input type="password" name="confirmPassword" id="confßirmPassword" />
-          <button type="submit">SIGN UP</button>
-        </form>
-      </main>
-    </div>
+  <div class="wrapper">
+    <main>
+        <div class="overlay-div">
+          <div class="side">
+            <img src="https://i.imgur.com/t0VK63X.png" alt="" width="300" height="300">
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Euismod et habitant ex fames purus proin dui elit.
+              Curabitur posuere aptent accumsan ad a suscipit maximus tempus. Mi nam scelerisque eleifend hac molestie
+              nam adipiscing. Egestas molestie egestas scelerisque; eleifend ipsum vulputate quam. Feugiat consequat
+              donec in sociosqu est pulvinar risus. Volutpat a sit; vulputate magnis platea mus pretium sapien.</p>
+          </div>
+          <div class="side">
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Euismod et habitant ex fames purus proin dui elit.
+              Curabitur posuere aptent accumsan ad a suscipit maximus tempus. Mi nam scelerisque eleifend hac molestie
+              nam adipiscing. Egestas molestie egestas scelerisque; eleifend ipsum vulputate quam. Feugiat consequat
+              donec in sociosqu est pulvinar risus. Volutpat a sit; vulputate magnis platea mus pretium sapien.</p>
+            <img src="https://i.imgur.com/t0VK63X.png" alt="" width="300" height="300">
+          </div>
+          <div class="blank">
+            <h1>Ready for effortless encounters?</h1>
+            <a href="/auth/sign-up">Try it for free!</a>
+          </div>
+          <div class="testimonial-container">
+            <h1>Testimonials</h1>
+            <div class="testimonials">
+              <div class="testimonial">1</div>
+              <div class="testimonial">2</div>
+              <div class="testimonial">3</div>
+            </div>
+          </div>
+          <div class="lightbox">
+            <h1>Hey visitor!</h1>
+            <p>Here's some cool info about this app</p>
+            <a href="/auth/sign-up">And here's a link that'll take you to a sign-up page!</a>
+            <p>Hate sign-up pages? That's cool - try the form below!</p>
+            <form action="/auth/sign-up" method="POST">
+              <label for="username">Username:</label>
+              <input type="text" name="username" id="username" />
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" />
+              <label for="confirmPassword">Confirm Password:</label>
+              <input type="password" name="confirmPassword" id="confßirmPassword" />
+              <button type="submit">SIGN UP</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
     <%- include('./partials/footer.ejs') %>
 
 </body>
