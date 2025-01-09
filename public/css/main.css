@@ -404,10 +404,19 @@ button:hover {
   height: 100%; 
 }
 
-.encounter {
+.pad-btm {
   padding-bottom: 3vmin;
 }
 
+.add {
+  grid-column: -2/-1;
+  border: 1px solid black;
+  background-color: #c9f3ee;
+}
+
+.full-col {
+  grid-column: 1/-1;
+}
 
 @media only screen and (max-width: 1024px) {
   #monsters {
