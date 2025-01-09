@@ -13,12 +13,11 @@
         <div class="wrapper">
             <div class="player pad-btm">
                 <div class="player-items">
-                    <h1>Encounters</h1>
+                    <h1><%- user.username%>'s Encounters</h1>
                     <div class="button-wrapper">
                         <a href="/encounters/new"><img src="https://i.imgur.com/7RoB4Dn.png" width="20" height="20"></a>
                         <a href="/encounters/new">Create a new Encounter</a>
                     </div>
-                    <h3>Saved Encounters:</h3>
                     <% if (encounters.length) { %>
                         <ul class="list-align">
                         <% encounters.forEach(encounter=> { %>

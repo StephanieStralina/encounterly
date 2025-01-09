@@ -423,6 +423,12 @@ button:hover {
   width: auto;
 }
 
+.encounter-align {
+  align-items: flex-start;
+  gap: 14vmin;
+  padding-bottom: 4vmin;
+}
+
 @media only screen and (max-width: 1024px) {
   #monsters {
     background-color: purple;

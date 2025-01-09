@@ -14,8 +14,8 @@
         <div class="center">
             <div class="player">
                 <div class="player-items">
-                    <h1>Encounters</h1>
-                    <h2>
+                    <h1><%-user.username%>'s Encounters</h1>
+                    <h2 style="font-style: italic">
                         <%= encounter.name %>
                     </h2>
                     <h4>This encounter is: <% if (encounter.difficulty === "Easy") { %>
@@ -28,11 +28,12 @@
                         <span style="color:rgb(255, 14, 14);">Deadly</h4>
                     <% } %>
                      </h4>
+                     <div class="inner-container encounter-align">
                     <ul>
                         <h3>Players</h3>
                         <% players.forEach(player=> { %>
                             <li>
-                                <%= player.charName %>
+                                <a href="/players/<%- player._id %>"><%= player.charName %></a> - Level <%= player.charLevel %>
                             </li>
                             <% }) %>
                     </ul>
@@ -40,10 +41,11 @@
                         <h3>Enemies</h3>
                         <% encounter.enemies.forEach(enemy=> { %>
                             <li>
-                                <%= enemy.name %>
+                                <a href="/monsters/<%- enemy._id %>"><%= enemy.name %></a> - CR <%= enemy.cr %>
                             </li>
                             <% }) %>
                     </ul>
+                </div>
                     <a href="/encounters/<%= encounter._id %>/edit" class="button-wrapper">Edit Encounter?</a>
                     <form action="/encounters/<%= encounter._id %>?_method=DELETE" method="POST">
                         <button class="button-wrapper delete" type="submit">Delete Encounter?</button>
