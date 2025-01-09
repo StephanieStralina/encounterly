@@ -9,36 +9,38 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
-        <div class="wrapper">
-            <!-- Page's Content -->
-            <h1>Encounters</h1>
-            <h2>
-                <%= encounter.name %>
-            </h2>
-            <ul>
-                <h3>Players</h3>
-                <% players.forEach(player=> { %>
-                    <li>
-                        <%= player.charName %>
-                    </li>
-                    <% }) %>
-            </ul>
-            <ul>
-                <h3>Enemies</h3>
-                <% encounter.enemies.forEach(enemy=> { %>
-                    <li>
-                        <%= enemy.name %>
-                    </li>
-                    <% }) %>
-            </ul>
-            <a href="/encounters/<%= encounter._id %>/edit">Edit Encounter?</a>
-            <form action="/encounters/<%= encounter._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete Encounter?</button>
-            </form>
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>Encounters</h1>
+                    <h2>
+                        <%= encounter.name %>
+                    </h2>
+                    <ul>
+                        <h3>Players</h3>
+                        <% players.forEach(player=> { %>
+                            <li>
+                                <%= player.charName %>
+                            </li>
+                            <% }) %>
+                    </ul>
+                    <ul>
+                        <h3>Enemies</h3>
+                        <% encounter.enemies.forEach(enemy=> { %>
+                            <li>
+                                <%= enemy.name %>
+                            </li>
+                            <% }) %>
+                    </ul>
+                    <a href="/encounters/<%= encounter._id %>/edit">Edit Encounter?</a>
+                    <form action="/encounters/<%= encounter._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete Encounter?</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
-
 </html>

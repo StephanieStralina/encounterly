@@ -8,45 +8,46 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
-        <!-- Page's Content -->
-        <div class="wrapper">
-            <h1>Create an Encounter!</h1>
-            <div class="wrapper">
-                <form action="/encounters" method="POST">
-                    <label for="encounter-name">Encounter Name:</label>
-                    <input type="text" name="name" id="name" required />
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>Create an Encounter!</h1>
+                        <form action="/encounters" method="POST">
+                            <label for="encounter-name">Encounter Name:</label>
+                            <input type="text" name="name" id="name" required />
 
-                    <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
+                            <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
 
-                    <div class="wrapper center">
-                    <label for="players">Players:</label>
-                    <!--Iterate through player options, when click, select them-->
-                    <select name="players[]" id="players" multiple>
-                        <% players.forEach(player=> { %>
-                            <option value="<%- player._id %>">
-                                <%= player.charName %>
-                            </option>
-                            <% }) %>
-                    </select>
-                    </div>
+                            <div class="wrapper center">
+                                <label for="players">Players:</label>
+                                <!--Iterate through player options, when click, select them-->
+                                <select name="players[]" id="players" multiple>
+                                    <% players.forEach(player=> { %>
+                                        <option value="<%- player._id %>">
+                                            <%= player.charName %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
 
-            <div class="wrapper center">
-                <label for="Enemies">Monsters:</label>
-                <!--Iterate through player options, when click, select them-->
-                <select name="enemies[]" id="enemies" multiple>
-                    <% monsters.forEach(monster=> { %>
-                        <option value="<%= monster._id %>">
-                            <%= monster.name %>
-                        </option>
-                        <% }) %>
-                </select>
+                            <div class="wrapper center">
+                                <label for="Enemies">Monsters:</label>
+                                <!--Iterate through player options, when click, select them-->
+                                <select name="enemies[]" id="enemies" multiple>
+                                    <% monsters.forEach(monster=> { %>
+                                        <option value="<%= monster._id %>">
+                                            <%= monster.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
+                            <button type="submit">Save Encounter</button>
+                    </form>
+                </div>
             </div>
-            <button type="submit">Save Encounter</button>
-            </form>
         </div>
-        <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
-
 </html>

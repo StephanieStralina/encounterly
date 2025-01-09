@@ -21,12 +21,10 @@ function addAbility() {
     descriptionInput.setAttribute('name', `details[abilities][${index}][description]`);
     descriptionInput.setAttribute('id', `abilities-description-${index}`);
 
-    // Append the newly created input fields
     container.appendChild(nameLabel);
     container.appendChild(nameInput);
     container.appendChild(descriptionLabel);
     container.appendChild(descriptionInput);
 
-    // Increment the index for the next ability
     index++;
 }

@@ -7,22 +7,27 @@
     <title>Encounterly - D&D Encounters</title>
     <link rel="stylesheet" href="/css/main.css" />
 </head>
-<body>
-<%- include('../partials/header.ejs') %>
-<div class="wrapper">
-    <!-- Page's Content -->
-    <h1>Encounters</h1>
-    <a href="/encounters/new">Add an Encounter</a>
-    <% if (encounters.length) { %>
-        <% encounters.forEach(encounter => { %>
-            <a href="/encounters/<%= encounter._id %>">
-                <%= encounter.name %>
-            </a>
-        <% }) %>
-    <% } else { %>
-        <p>You don't have any encounters yet!</p>
-    <% } %>
-</div>
+
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
+    <%- include('../partials/header.ejs') %>
+        <div class="wrapper">
+            <div class="player encounter">
+                <div class="player-items">
+                    <h1>Encounters</h1>
+                    <a href="/encounters/new">Add an Encounter</a>
+                    <% if (encounters.length) { %>
+                        <% encounters.forEach(encounter=> { %>
+                            <a href="/encounters/<%= encounter._id %>">
+                                <%= encounter.name %>
+                            </a>
+                            <% }) %>
+                                <% } else { %>
+                                    <p>You don't have any encounters yet!</p>
+                                    <% } %>
+                </div>
+            </div>
+        </div>
+        
     <%- include('../partials/footer.ejs') %>
 </body>
 </html>

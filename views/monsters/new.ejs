@@ -9,58 +9,64 @@
     <script src="/js/form-handler.js"></script>
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
-        <div class="wrapper">
-            <h1>Add a New Monster</h1>
-              <form action="/monsters" method="POST">
-              <label for="monster-name">Monster Name:</label> 
-              <input type="text" name="name" id="monster-name" required/> 
-              <label for="monster-image">Image:</label> 
-              <input type="url" name="image" id="monster-image"/> 
-              <label for="monster-type">Type:</label> 
-              <input type="text" name="type" id="monster-type" required/> 
-              <label for="monster-size">Size:</label> 
-              <input type="text" name="size" id="monster-size" required/> 
-              <label for="monster-alignment">Alignment:</label> 
-              <input type="text" name="alignment" id="monster-alignment"/> 
-              <label for="xp">XP:</label> <input type="number" name="xp" id="xp" required/> 
-              <label for="CR">CR:</label> <input type="text" name="cr" id="cr" required/> 
-              <label for="hp">HP:</label> <input type="number" name="hp" id="hp" required/> 
-              <label for="ac">AC:</label> <input type="number" name="ac" id="ac" required/> 
-              <label for="proficiency">Prof:</label> <input type="number" name="prof" id="prof" required/> 
-              <!-- Stat Schema --> 
-               <label for="str">Strength:</label> 
-               <input type="number" name="stats[str]" id="str" required/> 
-               <label for="dex">Dexterity:</label> 
-               <input type="number" name="stats[dex]" id="dex" required/> 
-               <label for="con">Constitution:</label> <input type="number" name="stats[con]" id="con" required/> 
-               <label for="int">Intelligence:</label> <input type="number" name="stats[int]" id="int" required/> 
-               <label for="wis">Wisdom:</label> <input type="number" name="stats[wis]" id="wis" required/> 
-               <label for="cha">Charisma:</label> <input type="number" name="stats[cha]" id="cha" required/> 
-               <label for="speed">Speed:</label> <input type="number" name="stats[speed]" id="speed" required/> 
-               <!-- Detail Schema --> 
-                <label for="senses">Senses:</label> 
-                <input type="text" name="details[senses]" id="senses" /> 
-                <label for="skills">Skills:</label> 
-                <input type="text" name="details[skills]" id="skills" /> 
-                <label for="languages">Languages:</label> 
-                <input type="text" name="details[languages]" id="languages" /> 
-                <label for="description">Description:</label> 
-                <input type="text" name="details[description]" id="description" /> 
-                <h3>Abilities</h3> 
-                <div id="abilities-container" class="wrapper">
-                    <label for="abilities-name-0">Name:</label>
-                    <input type="text" name="details[abilities][0][name]" id="abilities-name-0" />
-                    <label for="abilities-description-0">Description:</label>
-                    <input type="text" name="details[abilities][0][description]" id="abilities-description-0" />
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>Add a New Monster</h1>
+                    <form action="/monsters" method="POST">
+                        <label for="monster-name">Monster Name:</label>
+                        <input type="text" name="name" id="monster-name" required />
+                        <label for="monster-image">Image:</label>
+                        <input type="url" name="image" id="monster-image" />
+                        <label for="monster-type">Type:</label>
+                        <input type="text" name="type" id="monster-type" required />
+                        <label for="monster-size">Size:</label>
+                        <input type="text" name="size" id="monster-size" required />
+                        <label for="monster-alignment">Alignment:</label>
+                        <input type="text" name="alignment" id="monster-alignment" />
+                        <label for="xp">XP:</label> <input type="number" name="xp" id="xp" required />
+                        <label for="CR">CR:</label> <input type="text" name="cr" id="cr" required />
+                        <label for="hp">HP:</label> <input type="number" name="hp" id="hp" required />
+                        <label for="ac">AC:</label> <input type="number" name="ac" id="ac" required />
+                        <label for="proficiency">Prof:</label> <input type="number" name="prof" id="prof" required />
+                        <!-- Stat Schema -->
+                        <label for="str">Strength:</label>
+                        <input type="number" name="stats[str]" id="str" required />
+                        <label for="dex">Dexterity:</label>
+                        <input type="number" name="stats[dex]" id="dex" required />
+                        <label for="con">Constitution:</label> <input type="number" name="stats[con]" id="con"
+                            required />
+                        <label for="int">Intelligence:</label> <input type="number" name="stats[int]" id="int"
+                            required />
+                        <label for="wis">Wisdom:</label> <input type="number" name="stats[wis]" id="wis" required />
+                        <label for="cha">Charisma:</label> <input type="number" name="stats[cha]" id="cha" required />
+                        <label for="speed">Speed:</label> <input type="number" name="stats[speed]" id="speed"
+                            required />
+                        <!-- Detail Schema -->
+                        <label for="senses">Senses:</label>
+                        <input type="text" name="details[senses]" id="senses" />
+                        <label for="skills">Skills:</label>
+                        <input type="text" name="details[skills]" id="skills" />
+                        <label for="languages">Languages:</label>
+                        <input type="text" name="details[languages]" id="languages" />
+                        <label for="description">Description:</label>
+                        <input type="text" name="details[description]" id="description" />
+                        <h3>Abilities</h3>
+                        <div id="abilities-container" class="wrapper">
+                            <label for="abilities-name-0">Name:</label>
+                            <input type="text" name="details[abilities][0][name]" id="abilities-name-0" />
+                            <label for="abilities-description-0">Description:</label>
+                            <input type="text" name="details[abilities][0][description]" id="abilities-description-0" />
+                        </div>
+                        <button type="button" onclick="addAbility()">Add Another Ability</button>
+                        <button type="submit">Add Monster to List</button>
                 </div>
-                <button type="button" onclick="addAbility()">Add Another Ability</button> 
-                <button type="submit">Add Monster to List</button> 
             </div>
+        </div>
         </form>
-        
-        <%- include('../partials/footer.ejs') %>
-</body>
 
+    <%- include('../partials/footer.ejs') %>
+</body>
 </html>

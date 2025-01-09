@@ -8,45 +8,46 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
-        <!-- Page's Content -->
-        <div class="wrapper">
-            <h1>Edit Your Encounter!</h1>
-            <div class="wrapper">
-                <form action="/encounters/<%= encounter._id %>?_method=PUT" method="POST">
-                    <label for="encounter-name">Encounter Name:</label>
-                    <input type="text" name="name" id="name" value="<%= encounter.name %>" required />
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>Edit Your Encounter!</h1>
+                    <form action="/encounters/<%= encounter._id %>?_method=PUT" method="POST">
+                        <label for="encounter-name">Encounter Name:</label>
+                        <input type="text" name="name" id="name" value="<%= encounter.name %>" required />
 
-                    <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
+                        <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
 
-                    <div class="wrapper center">
-                        <label for="players">Players:</label>
-                        <select name="players[]" id="players" multiple>
-                            <% players.forEach(player => { %>
-                                <option value="<%- player._id %>" 
-                                    <%= selectedPlayers.includes(player._id.toString()) ? 'selected' : '' %>>
-                                    <%= player.charName %>
-                                </option>
-                            <% }) %>
-                        </select>
-                    </div>
+                        <div class="wrapper center">
+                            <label for="players">Players:</label>
+                            <select name="players[]" id="players" multiple>
+                                <% players.forEach(player=> { %>
+                                    <option value="<%- player._id %>" <%=selectedPlayers.includes(player._id.toString())
+                                        ? 'selected' : '' %>>
+                                        <%= player.charName %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
 
-                    <div class="wrapper center">
-                        <label for="Enemies">Monsters:</label>
-                        <select name="enemies[]" id="enemies" multiple>
-                            <% monsters.forEach(monster => { %>
-                                <option value="<%- monster._id %>" 
-                                    <%= selectedEnemies.includes(monster._id.toString()) ? 'selected' : '' %>>
-                                    <%= monster.name %>
-                                </option>
-                            <% }) %>
-                        </select>
-                    </div>
-            <button type="submit">Update Encounter</button>
-            </form>
+                        <div class="wrapper center">
+                            <label for="Enemies">Monsters:</label>
+                            <select name="enemies[]" id="enemies" multiple>
+                                <% monsters.forEach(monster=> { %>
+                                    <option value="<%- monster._id %>"
+                                        <%=selectedEnemies.includes(monster._id.toString()) ? 'selected' : '' %>>
+                                        <%= monster.name %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                        <button type="submit">Update Encounter</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
-
 </html>

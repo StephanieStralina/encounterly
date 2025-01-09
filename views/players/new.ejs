@@ -8,38 +8,44 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
         <div class="wrapper">
-            <h1>Add a Player Charater</h1>
-            <form action="/players" method="POST">
-                <label for="character-name">Character Name:</label>
-                <input type="text" name="charName" id="charName" required/>
+            <div class="player">
+                <div class="player-items">
+                    <h1>Add a Player Charater</h1>
+                    <form action="/players" method="POST">
+                        <label for="character-name">Character Name:</label>
+                        <input type="text" name="charName" id="charName" required />
 
-                <label for="character-image">Character Image:</label>
-                <input type="url" name="charImg" id="charImg"/>
-              
-                <label for="character-class">Character Class:</label>
-                <select type="class" name="charClass" id="charClass">
-                    <% characterClasses.forEach(classOption => { %>
-                        <option value="<%= classOption %>"><%= classOption %></option>
-                    <% }) %>
-                </select>
-              
-                <label for="character-level">Character Level:</label>
-                <input type="number" name="charLevel" id="charLevel" required/>
+                        <label for="character-image">Character Image:</label>
+                        <input type="url" name="charImg" id="charImg" />
 
-                <label for="character-hp">Character HP:</label>
-                <input type="number" name="hp" id="charLevel" required/>
+                        <label for="character-class">Character Class:</label>
+                        <select type="class" name="charClass" id="charClass">
+                            <% characterClasses.forEach(classOption=> { %>
+                                <option value="<%= classOption %>">
+                                    <%= classOption %>
+                                </option>
+                                <% }) %>
+                        </select>
 
-                <label for="character-ac">Character AC:</label>
-                <input type="number" name="ac" id="ac" required/>
+                        <label for="character-level">Character Level:</label>
+                        <input type="number" name="charLevel" id="charLevel" required />
 
-                <label for="character-party">Party Name:</label>
-                <input type="string" name="partyName" id="partyName" autocomplete="on" />
-        
-                <button type="submit">Add Application</button>
-              </form>
+                        <label for="character-hp">Character HP:</label>
+                        <input type="number" name="hp" id="charLevel" required />
+
+                        <label for="character-ac">Character AC:</label>
+                        <input type="number" name="ac" id="ac" required />
+
+                        <label for="character-party">Party Name:</label>
+                        <input type="string" name="partyName" id="partyName" autocomplete="on" />
+
+                        <button type="submit">Add Application</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <%- include('../partials/footer.ejs') %>
 

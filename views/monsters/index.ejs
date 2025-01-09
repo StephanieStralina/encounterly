@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
-    <!-- Home Page's Content -->
+<body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
-    <div class="wrapper">
-        <h1>Monsters</h1>
-        <a href="/monsters/new">Add a Monster</a>
-        <% if (monsters.length) { %>
-            <% monsters.forEach(monster => { %>
-                <a href="/monsters/<%= monster._id %>">
-                <%= monster.name %>
-                </a>
-            <% }) %>
-        <% } else { %>
-            <p>There are no monsters in this list</p>
-        <% } %>
-    </div>
+        <div class="center">
+            <div class="player">
+                <div class="player-items">
+                    <h1>Monsters</h1>
+                    <a href="/monsters/new">Add a Monster</a>
+                    <% if (monsters.length) { %>
+                        <% monsters.forEach(monster=> { %>
+                            <a href="/monsters/<%= monster._id %>">
+                                <%= monster.name %>
+                            </a>
+                            <% }) %>
+                                <% } else { %>
+                                    <p>There are no monsters in this list</p>
+                                    <% } %>
+                </div>
+            </div>
+        </div>
     <%- include('../partials/footer.ejs') %>
-
 </body>
-
 </html>
