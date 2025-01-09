@@ -14,19 +14,38 @@
             <div class="player pad-btm">
                 <div class="player-items">
                     <h1>Monsters</h1>
-                    <a href="/monsters/new">Add a Monster</a>
-                    <% if (monsters.length) { %>
-                        <% monsters.forEach(monster=> { %>
-                            <a href="/monsters/<%= monster._id %>">
-                                <%= monster.name %>
-                            </a>
-                            <% }) %>
-                                <% } else { %>
-                                    <p>There are no monsters in this list</p>
-                                    <% } %>
+                    <div class="button-wrapper">
+                        <a href="/monsters/new"><img src="https://i.imgur.com/7RoB4Dn.png" width="20" height="20"></a>
+                        <a href="/monsters/new">Add a Monster</a>
+                    </div>
+                    <p>Click on each Monster to see their stats!</p>
+                    <!--Copy start-->
+                    <div class="player-characters">
+                        <% if (monsters.length) { %>
+                            <% monsters.forEach(monster=> { %>
+                                <div class="characters">
+                                    <div class="character-img">
+                                        <a href="/monsters/<%= monster._id %>">
+                                            <% if (monster.image==='' ) { %>
+                                                <img src="https://i.imgur.com/AICPATy.png">
+                                                <% } else { %>
+                                                    <img src="<%= monster.image %>">
+                                                    <% } %>
+                                        </a>
+                                    </div>
+                                    <div class="character-txt monster">
+                                        <a href="/monsters/<%= monster._id %>">
+                                            <%= monster.name %>
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }) %>
+                                    <% } else { %>
+                                        <p>You haven't created any monsters yet!</p>
+                                        <% } %>
+                    </div>
                 </div>
             </div>
-        </div>
-    <%- include('../partials/footer.ejs') %>
+        <%- include('../partials/footer.ejs') %>
 </body>
 </html>

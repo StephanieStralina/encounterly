@@ -36,7 +36,11 @@
                                             <p>
                                                 Member of the <%= player.partyName %> party
                                             </p>
-                                            <% } %>
+                                            <% } else { %>
+                                                <p>
+                                                    Independent
+                                                </p>
+                                            <% }%>
                                     </div>
                                 </div>
                                 <% }) %>

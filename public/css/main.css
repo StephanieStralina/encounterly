@@ -301,7 +301,7 @@ button:hover {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 2vmin;
-  gap: 1vmin;
+  gap: 1.5vmin;
 }
 
 .characters {
@@ -313,6 +313,7 @@ button:hover {
   height: 40vmin;
   width: 40vmin;
   overflow: hidden;
+  gap: 2vmin;
 }
 
 .character-img {
@@ -416,6 +417,10 @@ button:hover {
 
 .full-col {
   grid-column: 1/-1;
+}
+
+.monster {
+  
 }
 
 @media only screen and (max-width: 1024px) {
