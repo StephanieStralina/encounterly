@@ -14,13 +14,20 @@
             <div class="player pad-btm">
                 <div class="player-items">
                     <h1>Encounters</h1>
-                    <a href="/encounters/new">Add an Encounter</a>
+                    <div class="button-wrapper">
+                        <a href="/encounters/new"><img src="https://i.imgur.com/7RoB4Dn.png" width="20" height="20"></a>
+                        <a href="/encounters/new">Create a new Encounter</a>
+                    </div>
+                    <h3>Saved Encounters:</h3>
                     <% if (encounters.length) { %>
+                        <ul class="list-align">
                         <% encounters.forEach(encounter=> { %>
-                            <a href="/encounters/<%= encounter._id %>">
+                            <li><a href="/encounters/<%= encounter._id %>">
                                 <%= encounter.name %>
                             </a>
+                        </li>
                             <% }) %>
+                        </ul>
                                 <% } else { %>
                                     <p>You don't have any encounters yet!</p>
                                     <% } %>

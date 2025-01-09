@@ -85,9 +85,9 @@
                             <%= ability.description %>
                         </p>
                         <% }) %>
-                            <a href="/monsters/<%= monster._id %>/edit">Edit Monster?</a>
+                            <a href="/monsters/<%= monster._id %>/edit" class="button-wrapper">Edit Monster?</a>
                             <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
-                                <button type="submit">Delete Monster?</button>
+                                <button class="button-wrapper delete" type="submit">Delete Monster?</button>
                             </form>
                 </div>
             </div>

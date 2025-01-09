@@ -66,6 +66,7 @@ app.use(require('./middleware/ensure-signed-in'));
 app.use('/encounters', require('./controllers/encounter'));
 app.use('/players', require('./controllers/player'));
 app.use('/monsters', require('./controllers/monster'));
+// app.use('/', require('./controllers/builder')); for rendering monster and encounter data
 
 
 

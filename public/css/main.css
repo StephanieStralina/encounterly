@@ -419,8 +419,8 @@ button:hover {
   grid-column: 1/-1;
 }
 
-.monster {
-  
+.list-align li {
+  width: auto;
 }
 
 @media only screen and (max-width: 1024px) {

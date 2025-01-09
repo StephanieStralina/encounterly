@@ -18,6 +18,16 @@
                     <h2>
                         <%= encounter.name %>
                     </h2>
+                    <h4>This encounter is: <% if (encounter.difficulty === "Easy") { %>
+                        <span style="color:rgb(120, 194, 157);">Easy</h4>
+                    <% } else if (encounter.difficulty === "Medium") { %>
+                        <span style="color:rgb(219, 159, 19);">Medium</h4>
+                    <% } else if (encounter.difficulty === "Hard") { %>
+                        <span style="color:rgb(162, 100, 198);">Hard</h4>
+                    <% } else { %>
+                        <span style="color:rgb(255, 14, 14);">Deadly</h4>
+                    <% } %>
+                     </h4>
                     <ul>
                         <h3>Players</h3>
                         <% players.forEach(player=> { %>
@@ -34,9 +44,9 @@
                             </li>
                             <% }) %>
                     </ul>
-                    <a href="/encounters/<%= encounter._id %>/edit">Edit Encounter?</a>
+                    <a href="/encounters/<%= encounter._id %>/edit" class="button-wrapper">Edit Encounter?</a>
                     <form action="/encounters/<%= encounter._id %>?_method=DELETE" method="POST">
-                        <button type="submit">Delete Encounter?</button>
+                        <button class="button-wrapper delete" type="submit">Delete Encounter?</button>
                     </form>
                 </div>
             </div>

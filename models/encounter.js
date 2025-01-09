@@ -15,7 +15,7 @@ const encounterSchema = new Schema({
         ref: 'Monster',
     },
     difficulty: {
-        type: Number,
+        type: String,
     },
     user: {
         type: Schema.Types.ObjectId,
