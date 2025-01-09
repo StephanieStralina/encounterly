@@ -30,6 +30,7 @@ Encounterly is an ecnounter creation and management app for the tabletop rolepla
 
 Thanks to Colby of D4 for providing excellent math documentation for calculating encounter difficulty! This is built using the XP Thresholds provided by [Wizards of the Coast](https://www.dndbeyond.com/sources/dnd/basic-rules-2014/building-combat-encounters?srsltid=AfmBOooA9WzfSuu415gJV3He3ww56tWbNak7_EwjsdtYFp7J1M8J_6G3).
 
-# Next Steps
+## Next Steps
 - Add options for encounter difficulty calculations (basic, standard, advanced)
-- 
+- Add pagination for monsters
+- Add filtering for monsters
