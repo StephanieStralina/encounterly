@@ -28,11 +28,13 @@ router.get('/new', async(req,res) => {
 //POST /encounters (create functionality)
 router.post('/', async (req, res) => {
     try {
-        req.body.players = req.body.players ? req.body.players.map(playerId => new mongoose.Types.ObjectId(`${playerId}`)) : [];
-        req.body.enemies = req.body.enemies ? req.body.enemies.map(enemyId => new mongoose.Types.ObjectId(`${enemyId}`)) : [];
-
-        const players = req.body.players.length > 0 ? await User.find({ _id: { $in: req.body.players } }) : [];
-        const monsters = req.body.enemies.length > 0 ? await Monster.find({ _id: { $in: req.body.enemies } }) : [];
+        const playerIds = req.body.players ? req.body.players.map(playerId => new mongoose.Types.ObjectId(`${playerId}`)) : [];
+        const enemyIds = req.body.enemies ? req.body.enemies.map(enemyId => new mongoose.Types.ObjectId(`${enemyId}`)) : [];
+        
+        const players = req.user.players.filter(player => 
+            playerIds.some(playerId => playerId.equals(player._id))
+        );
+        const monsters = enemyIds.length > 0 ? await Monster.find({ _id: { $in: enemyIds } }) : [];
 
         const thresholds = {
             1: { easy: 25, medium: 50, hard: 75, deadly: 100 },
@@ -69,12 +71,16 @@ router.post('/', async (req, res) => {
         });
 
         const totalMonsterXP = monsters.reduce((sum, monster) => sum + monster.xp, 0);
+        console.log({ totalMonsterXP, totalThresholds });
 
         let difficulty;
         if (totalMonsterXP <= totalThresholds.easy) difficulty = "Easy";
         else if (totalMonsterXP <= totalThresholds.medium) difficulty = "Medium";
         else if (totalMonsterXP <= totalThresholds.hard) difficulty = "Hard";
         else difficulty = "Deadly";
+
+        req.body.players = playerIds;
+        req.body.enemies = enemyIds;
 
         const encounter = new Encounter(req.body);
         encounter.user = req.user._id;
