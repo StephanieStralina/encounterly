@@ -11,6 +11,7 @@
 
 <body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
+    <img src="https://i.imgur.com/ws1MM24.png" style="max-height:18vmin;max-width: 32vmin;margin: auto;" class="fade-in" alt="Image of text logo Encounterly and a small round creatures with tentacles and one giant eye">
         <div class="wrapper">
             <div class="player pad-btm">
                 <div class="player-items">
@@ -20,7 +21,7 @@
                         <a href="/encounters/new">Create a new Encounter</a>
                     </div>
                     <% if (encounters.length) { %>
-                        <ul class="list-align">
+                        <ul class="list-align fade-in">
                         <% encounters.forEach(encounter=> { %>
                             <li><a href="/encounters/<%= encounter._id %>">
                                 <%= encounter.name %>

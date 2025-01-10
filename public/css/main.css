@@ -67,7 +67,11 @@ nav a {
 
 nav span {
   font-size: 1.5vmin;
-  color: lightslategray;
+  color: rgb(215, 220, 224);
+}
+
+footer {
+  color: rgb(215, 220, 224);
 }
 
 main {
@@ -274,7 +278,7 @@ button:hover {
 }
 
 .player {
-  width: 95%;
+  width: 100%;
   margin: 4vmin 0;
   display: flex;
   flex-direction: column;

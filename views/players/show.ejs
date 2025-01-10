@@ -13,13 +13,13 @@
 <body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
     <%- include('../partials/header.ejs') %>
         <div class="center">
-            <div class="player">
+            <div class="player fade-in">
                 <div class="player-items">
                     <h1>
                         <%= player.charName %>
                     </h1>
                     <div class="show-character">
-                        <img src="<%= player.charImg %>" style="max-width: 400px; max-height: 300px;">
+                        <img src="<%= player.charImg %>" style="max-width: 400px; max-height: 300px;" alt="Image of D&D character <%- player.charName %>">
                     </div>
                     <% if (player.partyName.length) { %>
                         <p>Party Member of: <%= player.partyName %>
