@@ -436,6 +436,14 @@ button:hover {
     animation: fadeInAnimation ease 3s forwards;
 }
 
+.hero {
+  margin-top: -4vmin;
+}
+
+.translucent {
+  background-color: #0c5876a2;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;

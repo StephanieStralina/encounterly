@@ -1,4 +1,5 @@
-Encounterly Logo here?
+![Encounterly Logo](https://i.imgur.com/ws1MM24.png)
+
 # Encounterly
 
 Encounterly is an ecnounter creation and management app for the tabletop roleplaying game *Dungeons & Dragons*. Encounterly includes features that let you add players to your roster, add enemies to your list of monsters, and create encounters where you can gauge the difficulty of a battle before you run it.
