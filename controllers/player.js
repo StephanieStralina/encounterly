@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 
+// All paths start with '/players'
+
 // Middleware to protect selected routes
 const ensureSignedIn = require('../middleware/ensure-signed-in');
 

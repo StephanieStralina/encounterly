@@ -13,9 +13,12 @@ body {
 }
 
 .background-img {
-  background: linear-gradient(rgba(0,0,0,0.5), 
-  rgba(0,0,0,0.5)), 
-  var(--image-url) center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)),
+    var(--image-url) center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .wrapper {
@@ -126,7 +129,7 @@ button:hover {
   padding-bottom: 5vmin;
   width: 95%;
   margin-bottom: 10vmin;
- }
+}
 
 .nested-container {
   display: flex;
@@ -207,6 +210,10 @@ button:hover {
   border-radius: 4vmin;
 }
 
+.testimonial {
+  padding: 6vmin;
+}
+
 .row-item-nobg {
   display: flex;
   flex-direction: column;
@@ -263,6 +270,8 @@ button:hover {
   align-items: center;
   justify-content: flex-start;
   border-radius: 2.5vmin;
+  gap: 12vmin;
+  padding-top: 2vmin;
 }
 
 #encounter {
@@ -326,8 +335,8 @@ button:hover {
 .character-img {
   position: relative;
   overflow: hidden;
-  border-radius: 1vmin; 
-  width: 90%; 
+  border-radius: 1vmin;
+  width: 90%;
   height: 70%;
   margin-top: 1vmin;
 }
@@ -338,7 +347,7 @@ button:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 
 .character-txt {
@@ -377,6 +386,11 @@ button:hover {
   color: #043142;
 }
 
+.button-wrapper:hover {
+  background-color: lightslategray;
+  color: white;
+}
+
 .delete {
   background-color: #043142;
   color: #eff5f7;
@@ -403,12 +417,12 @@ button:hover {
   overflow: hidden;
 }
 
-.show-character img { 
+.show-character img {
   object-fit: cover;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 
 .pad-btm {
@@ -434,12 +448,13 @@ button:hover {
   gap: 14vmin;
   padding-bottom: 4vmin;
 }
+
 .characters {
   opacity: 0;
 }
 
 .fade-in {
-    animation: fadeInAnimation ease 3s forwards;
+  animation: fadeInAnimation ease 3s forwards;
 }
 
 .hero {
@@ -453,7 +468,7 @@ button:hover {
 .monster-break {
   width: 80%;
   height: .5vmin;
-  border-width:0;
+  border-width: 0;
   color: #043142;
   background-color: #043142;
 }
@@ -486,13 +501,13 @@ button:hover {
 }
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 .partial-width {
@@ -502,21 +517,23 @@ button:hover {
 
 @media only screen and (max-width: 1024px) {
   #monsters {
-    background-color: purple;
-    width: 100%;
-    height: 90%;
     display: flex;
     justify-content: center;
+    width: 100%;
   }
-  
+
   #encounter {
-    background-color: green;
-    display: none;
-    height: 90%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .builder-wrapper {
+    flex-direction: column;
   }
 
   .nested-container {
-  padding: 8vmin 18vmin;
+    padding: 8vmin 18vmin;
   }
 
   .inner-container {
@@ -542,15 +559,13 @@ button:hover {
     text-align: center;
   }
 
- .mobile-hr {
-  display: block;
-  width: 100%;
-  height: .5vmin;
-  border-width:0;
-  color: #043142;
-  background-color: #043142;
- } 
+  .mobile-hr {
+    display: block;
+    width: 100%;
+    height: .5vmin;
+    border-width: 0;
+    color: #043142;
+    background-color: #043142;
+  }
 
 }
-
-

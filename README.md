@@ -7,8 +7,11 @@ Encounterly is an ecnounter creation and management app for the tabletop rolepla
 ## Screenshots
 
 ![Players index screen](https://i.imgur.com/8lfodVs.png)
+*Players index page screenshot*
 ![Monster details screen](https://i.imgur.com/q8T0y5n.png)
+*Monster details page screenshot*
 ![Encounter difficulty](https://i.imgur.com/jCOu5CR.png)
+*Encounter difficulty screenshot*
 
 ## How to Use
 

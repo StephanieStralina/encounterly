@@ -18,95 +18,96 @@
                     <h1>
                         <%= monster.name %>
                     </h1>
-                    <img src="<%= monster.image %>" style="max-width: 400px; max-height: 300px;" alt="An image of a monster known as a <%= monster.name %>">
+                    <img src="<%= monster.image %>" style="max-width: 400px; max-height: 300px;"
+                        alt="An image of a monster known as a <%= monster.name %>">
                     <div class="monster-row partial-width">
                         <p>
                             <%= monster.details.description %>
                         </p>
                     </div>
                     <div class="monster-row">
-                    <p>
-                        Type: <%= monster.type %>
-                    </p>
-                    <p>
-                        Size: <%= monster.size %>
-                    </p>
-                    <p>
-                        Alignment: <%= monster.alignment %>
-                    </p>
+                        <p>
+                            Type: <%= monster.type %>
+                        </p>
+                        <p>
+                            Size: <%= monster.size %>
+                        </p>
+                        <p>
+                            Alignment: <%= monster.alignment %>
+                        </p>
                     </div>
                     <hr class="monster-break" />
                     <div class="monster-row">
                         <p>
-                        XP: <%= monster.xp %>
+                            XP: <%= monster.xp %>
                         </p>
                         <p>
-                        CR: <%= monster.cr %>
+                            CR: <%= monster.cr %>
                         </p>
                         <p>
                             HP: <%= monster.hp %>
                         </p>
                         <p>
-                        AC: <%= monster.ac %>
+                            AC: <%= monster.ac %>
                         </p>
                         <p>
                             Prof: <%= monster.prof %>
                         </p>
-                </div>
-                <hr class="mobile-hr" />
-                <div class="monster-row monster-space">
-                    <div class="monster-column column-space">
-                    <h3>Stats</h3>
-                    <p>
-                        STR: <%= monster.stats.str %>
-                    </p>
-                    <p>
-                        DEX: <%= monster.stats.dex %>
-                    </p>
-                    <p>
-                        CON: <%= monster.stats.con %>
-                    </p>
-                    <p>
-                        INT: <%= monster.stats.int %>
-                    </p>
-                    <p>
-                        WIS: <%= monster.stats.wis %>
-                    </p>
-                    <p>
-                        CHA: <%= monster.stats.cha %>
-                    </p>
-                    <p>
-                        Speed: <%= monster.stats.speed %>
-                    </p>
-                    <p>
-                        Skills: <%= monster.details.skills %>
-                    </p>
-                    <p>
-                        Senses: <%= monster.details.senses %>
-                    </p>
-                    <p>
-                        Languages: <%= monster.details.languages %>
-                    </p>
-                </div>
-                <hr class="mobile-hr" />
-                <div class="monster-column ability">
-                    <h3>Abilities</h3>
-                    <% monster.details.abilities.forEach(ability=> { %>
-                        <h4>
-                            <%= ability.name %>
-                        </h4>
-                        <p>
-                            <%= ability.description %>
-                        </p>
-                        <% }) %>
                     </div>
-                </div>
-                <div class="monster-row">
-                            <a href="/monsters/<%= monster._id %>/edit" class="button-wrapper">Edit Monster?</a>
-                            <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
-                                <button class="button-wrapper delete" type="submit">Delete Monster?</button>
-                            </form>
-                </div>     
+                    <hr class="mobile-hr" />
+                    <div class="monster-row monster-space">
+                        <div class="monster-column column-space">
+                            <h3>Stats</h3>
+                            <p>
+                                STR: <%= monster.stats.str %>
+                            </p>
+                            <p>
+                                DEX: <%= monster.stats.dex %>
+                            </p>
+                            <p>
+                                CON: <%= monster.stats.con %>
+                            </p>
+                            <p>
+                                INT: <%= monster.stats.int %>
+                            </p>
+                            <p>
+                                WIS: <%= monster.stats.wis %>
+                            </p>
+                            <p>
+                                CHA: <%= monster.stats.cha %>
+                            </p>
+                            <p>
+                                Speed: <%= monster.stats.speed %>
+                            </p>
+                            <p>
+                                Skills: <%= monster.details.skills %>
+                            </p>
+                            <p>
+                                Senses: <%= monster.details.senses %>
+                            </p>
+                            <p>
+                                Languages: <%= monster.details.languages %>
+                            </p>
+                        </div>
+                        <hr class="mobile-hr" />
+                        <div class="monster-column ability">
+                            <h3>Abilities</h3>
+                            <% monster.details.abilities.forEach(ability=> { %>
+                                <h4>
+                                    <%= ability.name %>
+                                </h4>
+                                <p>
+                                    <%= ability.description %>
+                                </p>
+                                <% }) %>
+                        </div>
+                    </div>
+                    <div class="monster-row">
+                        <a href="/monsters/<%= monster._id %>/edit" class="button-wrapper">Edit Monster?</a>
+                        <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
+                            <button class="button-wrapper delete" type="submit">Delete Monster?</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

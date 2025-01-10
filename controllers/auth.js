@@ -1,7 +1,6 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const express = require('express');
-// Create a router function/object (a router is a middleware function)
 const router = express.Router();
 
 // All paths start with '/auth'
@@ -24,7 +23,6 @@ router.post('/sign-up', async (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, 6);
     const user = await User.create(req.body);
     req.session.user_id = user._id;
-    // Update path to the functionality YOU want
     res.redirect('/');
   } catch (e) {
     console.log(e);
@@ -42,11 +40,9 @@ router.post('/sign-in', async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user) throw new Error('Invalid username');
-    // Verify the password
     const valid = bcrypt.compareSync(req.body.password, user.password);
     if (!valid) throw new Error('Invalid password');
     req.session.user_id = user._id;
-    // Update path to the functionality YOU want
     res.redirect('/');
   } catch (e) {
     console.log(e);

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Monster = require('../models/monster');
 
+// All paths start with '/monsters'
+
 //GET /monsters (index functionality)
 router.get('/', async (req, res) => {
     let monsters = await Monster.find({ user: req.user._id}).sort({ name: 1 });

@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const Encounter = require('../models/encounter');
 const Monster = require('../models/monster');
 const User = require('../models/user');
-const monster = require('../models/monster');
+
+// All paths start with '/encounters'
 
 //GET /encounters (index functionality)
 router.get('/', async (req, res) => {
