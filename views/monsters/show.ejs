@@ -7,6 +7,7 @@
     <title>Encounterly - <%= monster.name %>
     </title>
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/XeR8XUQ.png" alt="Image of giant monster eye" />
 </head>
 
 <body class="background-img" style="--image-url:url(https://i.imgur.com/3d3mxdk.png)">
@@ -17,64 +18,78 @@
                     <h1>
                         <%= monster.name %>
                     </h1>
-                    <img src="<%= monster.image %>" style="max-width: 400px; max-height: 300px;">
+                    <img src="<%= monster.image %>" style="max-width: 400px; max-height: 300px;" alt="An image of a monster known as a <%= monster.name %>">
+                    <div class="monster-row partial-width">
+                        <p>
+                            <%= monster.details.description %>
+                        </p>
+                    </div>
+                    <div class="monster-row">
                     <p>
-                        <%= monster.type %>
+                        Type: <%= monster.type %>
                     </p>
                     <p>
-                        <%= monster.size %>
+                        Size: <%= monster.size %>
                     </p>
                     <p>
-                        <%= monster.alignment %>
+                        Alignment: <%= monster.alignment %>
+                    </p>
+                    </div>
+                    <hr class="monster-break" />
+                    <div class="monster-row">
+                        <p>
+                        XP: <%= monster.xp %>
+                        </p>
+                        <p>
+                        CR: <%= monster.cr %>
+                        </p>
+                        <p>
+                            HP: <%= monster.hp %>
+                        </p>
+                        <p>
+                        AC: <%= monster.ac %>
+                        </p>
+                        <p>
+                            Prof: <%= monster.prof %>
+                        </p>
+                </div>
+                <hr class="mobile-hr" />
+                <div class="monster-row monster-space">
+                    <div class="monster-column column-space">
+                    <h3>Stats</h3>
+                    <p>
+                        STR: <%= monster.stats.str %>
                     </p>
                     <p>
-                        <%= monster.xp %>
+                        DEX: <%= monster.stats.dex %>
                     </p>
                     <p>
-                        <%= monster.cr %>
+                        CON: <%= monster.stats.con %>
                     </p>
                     <p>
-                        <%= monster.hp %>
+                        INT: <%= monster.stats.int %>
                     </p>
                     <p>
-                        <%= monster.ac %>
+                        WIS: <%= monster.stats.wis %>
                     </p>
                     <p>
-                        <%= monster.prof %>
+                        CHA: <%= monster.stats.cha %>
                     </p>
                     <p>
-                        <%= monster.stats.str %>
+                        Speed: <%= monster.stats.speed %>
                     </p>
                     <p>
-                        <%= monster.stats.dex %>
+                        Skills: <%= monster.details.skills %>
                     </p>
                     <p>
-                        <%= monster.stats.con %>
+                        Senses: <%= monster.details.senses %>
                     </p>
                     <p>
-                        <%= monster.stats.int %>
+                        Languages: <%= monster.details.languages %>
                     </p>
-                    <p>
-                        <%= monster.stats.wis %>
-                    </p>
-                    <p>
-                        <%= monster.stats.cha %>
-                    </p>
-                    <p>
-                        <%= monster.stats.speed %>
-                    </p>
-                    <p>
-                        <%= monster.details.skills %>
-                    </p>
-                    <p>
-                        <%= monster.details.senses %>
-                    </p>
-                    <p>
-                        <%= monster.details.languages %>
-                    </p>
-                    <p>
-                        <%= monster.details.description %>
-                    </p>
+                </div>
+                <hr class="mobile-hr" />
+                <div class="monster-column ability">
                     <h3>Abilities</h3>
                     <% monster.details.abilities.forEach(ability=> { %>
                         <h4>
@@ -84,10 +99,14 @@
                             <%= ability.description %>
                         </p>
                         <% }) %>
+                    </div>
+                </div>
+                <div class="monster-row">
                             <a href="/monsters/<%= monster._id %>/edit" class="button-wrapper">Edit Monster?</a>
                             <form action="/monsters/<%= monster._id %>?_method=DELETE" method="POST">
                                 <button class="button-wrapper delete" type="submit">Delete Monster?</button>
                             </form>
+                </div>     
                 </div>
             </div>
         </div>
