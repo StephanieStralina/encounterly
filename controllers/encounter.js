@@ -71,7 +71,6 @@ router.post('/', async (req, res) => {
         });
 
         const totalMonsterXP = monsters.reduce((sum, monster) => sum + monster.xp, 0);
-        console.log({ totalMonsterXP, totalThresholds });
 
         let difficulty;
         if (totalMonsterXP <= totalThresholds.easy) difficulty = "Easy";
