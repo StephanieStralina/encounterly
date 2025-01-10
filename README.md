@@ -1,3 +1,4 @@
+Encounterly Logo here?
 # Encounterly
 
 Encounterly is an ecnounter creation and management app for the tabletop roleplaying game *Dungeons & Dragons*. Encounterly includes features that let you add players to your roster, add enemies to your list of monsters, and create encounters where you can gauge the difficulty of a battle before you run it.
@@ -20,15 +21,16 @@ Encounterly is an ecnounter creation and management app for the tabletop rolepla
 - Node.JS
 - MongoDB
 - HTML
-- CSS
 - Flexbox
 - VS Code
 - Github
 - Affinity Designer
 
+*Planning notes available [on Trello](https://trello.com/b/IxUcOICf/encounterly-dd-encounter-builder)*
+
 ## Attribution
 
-Thanks to Colby of D4 for providing excellent math documentation for calculating encounter difficulty! This is built using the XP Thresholds provided by [Wizards of the Coast](https://www.dndbeyond.com/sources/dnd/basic-rules-2014/building-combat-encounters?srsltid=AfmBOooA9WzfSuu415gJV3He3ww56tWbNak7_EwjsdtYFp7J1M8J_6G3).
+Thanks to Colby of D4 for providing excellent math documentation for calculating encounter difficulty! This is built using the XP Thresholds provided by [Wizards of the Coast](https://www.dndbeyond.com/sources/dnd/basic-rules-2014/building-combat-encounters?srsltid=AfmBOooA9WzfSuu415gJV3He3ww56tWbNak7_EwjsdtYFp7J1M8J_6G3). Monsters are also courtesy of the SRD put out by Wizards of the Coast.
 
 ## Next Steps
 - Add options for encounter difficulty calculations (basic, standard, advanced)
